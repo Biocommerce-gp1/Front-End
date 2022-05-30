@@ -1,10 +1,12 @@
 import Login from './pages/Login/Login';
 import Navbar from './componentes/estaticos/navbar/Navbar'
-import Footer from './componentes/estaticos/navbar/footer/Footer'; 
+import Footer from './componentes/estaticos/footer/Footer'; 
 import React from 'react';
 import {  Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-// import { Home } from '@material-ui/icons';
+import SobreNos from './pages/SobreNos/SobreNos';
+import Home from './pages/Home/Home';
+
 
 function App() {
   return (
@@ -12,9 +14,10 @@ function App() {
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes> // Antigo Switch
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path='/sobre-nos' element={<SobreNos />} />
+          <Route path="/home" element={<Home />} />
           {/* <Route path="/cadastro" element={<CadastroUsuario />} /> */}
         </Routes>
       </div>
