@@ -1,7 +1,10 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box, InputBase } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
 import { styled, alpha } from '@mui/material/styles';
+import './Navbar.css';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -45,7 +48,10 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-<AppBar position="static">
+function Navbar() {
+    return (
+        <>
+            <AppBar position="static">
                 <Toolbar className='fundo' variant="dense">
                     <Box style={{ cursor: "pointer" }} >
                         <Typography variant="h5" color="inherit">
@@ -63,14 +69,14 @@ const Search = styled('div')(({ theme }) => ({
                         </Typography>
                     </Box>
                     <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Pesquisar…"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography variant="h6" color="inherit">
                             Logout
@@ -78,3 +84,10 @@ const Search = styled('div')(({ theme }) => ({
                     </Box>
                 </Toolbar>
             </AppBar>
+        </>
+
+    );
+
+}
+
+export default Navbar;
