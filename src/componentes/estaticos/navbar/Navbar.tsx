@@ -5,6 +5,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import { styled, alpha } from '@mui/material/styles';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -53,16 +54,23 @@ function Navbar() {
         <>
             <AppBar position="static">
                 <Toolbar className='fundo' variant="dense">
+
+                <Link to='/home' className='text-decoration'>
                     <Box style={{ cursor: "pointer" }} >
                         <Typography variant="h5" color="inherit">
                             Home
                         </Typography>
                     </Box>
+                </Link>
+
+                    <Link to='/sobre-nos' className='text-decoration'>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography variant="h6" color="inherit">
                             Sobre nós
                         </Typography>
                     </Box>
+                    </Link>
+                    
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography variant="h6" color="inherit">
                             Produtos
@@ -77,11 +85,14 @@ function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
+                    <Link to='/login' className='text-decoration'>
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography variant="h6" color="inherit">
                             Logout
                         </Typography>
                     </Box>
+                    </Link>
+                    
                 </Toolbar>
             </AppBar>
         </>

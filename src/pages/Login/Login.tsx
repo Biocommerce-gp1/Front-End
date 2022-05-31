@@ -26,9 +26,13 @@ function Login() {
                                         <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
                                     </Box>
                     
-                                        <Button variant="contained" color="secondary" className="botao" type='submit'>
+                                    <Box>
+                                        <Link to='/home' className='text-decoration'>
+                                            <Button variant="contained" color="secondary" className="botao" type='submit'>
                                             Login
                                         </Button>
+                                        </Link>
+                                    </Box>
                                 </form>
                                 <Box display='flex' justifyContent='center' marginTop={2}>
                                     <Box marginRight={1} className='cadastrar'>
