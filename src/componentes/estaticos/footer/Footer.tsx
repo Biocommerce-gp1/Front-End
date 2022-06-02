@@ -56,8 +56,4 @@ function Footer() {
   );
 }
 
-<<<<<<< HEAD
-export default Footer
-=======
 export default Footer;
->>>>>>> 258627216d64203604116da8b19be78c70b112d2

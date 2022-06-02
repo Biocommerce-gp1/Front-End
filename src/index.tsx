@@ -13,7 +13,3 @@ document.getElementById('root')
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-<<<<<<< HEAD
-
-=======
->>>>>>> 258627216d64203604116da8b19be78c70b112d2
