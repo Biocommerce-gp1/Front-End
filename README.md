@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+=======
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 258627216d64203604116da8b19be78c70b112d2
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -46,9 +49,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+<<<<<<< HEAD
+=======
 =======
 # Front-End
 >>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
 =======
 # Front-End
 >>>>>>> 9420ab325696248f759fb3f1e2feba33a8cf05f4
+>>>>>>> 258627216d64203604116da8b19be78c70b112d2
