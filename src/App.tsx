@@ -1,7 +1,7 @@
+import React from 'react';
 import Login from './pages/Login/Login';
 import Navbar from './componentes/estaticos/navbar/Navbar'
 import Footer from './componentes/estaticos/footer/Footer'; 
-import React from 'react';
 import {  Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import SobreNos from './pages/SobreNos/SobreNos';
