@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
+import { login } from '../../services/Service';
 
 let navigate = useNavigate(); //antigo history = useHistory
     const [token, setToken] = useLocalStorage('token');
@@ -68,7 +69,7 @@ function Login() {
                                         <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
                                     </Box>
                     
-                                    <Box>
+                                    <Box textAlign='center'>
                                         <Link to='/home' className='text-decoration'>
                                             <Button variant="contained" color="secondary" className="botao" type='submit'>
                                             Login
