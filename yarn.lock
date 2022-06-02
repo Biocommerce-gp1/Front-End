@@ -2092,8 +2092,11 @@
     "@types/estree" "*"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@types/eslint@*", "@types/eslint@^7.28.2":
 =======
+=======
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 "@types/eslint@*":
   version "8.4.2"
   resolved "https://registry.npmjs.org/@types/eslint/-/eslint-8.4.2.tgz"
@@ -2103,6 +2106,9 @@
     "@types/json-schema" "*"
 
 "@types/eslint@^7.28.2":
+<<<<<<< HEAD
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
+=======
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
   version "7.29.0"
   resolved "https://registry.npmjs.org/@types/eslint/-/eslint-7.29.0.tgz"
@@ -2179,8 +2185,11 @@
     "@types/istanbul-lib-report" "*"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@types/jest@*", "@types/jest@^27.4.0":
 =======
+=======
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 "@types/jest@*":
   version "28.1.0"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-28.1.0.tgz"
@@ -2190,6 +2199,9 @@
     pretty-format "^27.0.0"
 
 "@types/jest@^27.4.0":
+<<<<<<< HEAD
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
+=======
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
   version "27.5.2"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-27.5.2.tgz"
@@ -2214,14 +2226,20 @@
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@types/node@*", "@types/node@^16.11.22":
 =======
+=======
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 "@types/node@*":
   version "17.0.38"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.38.tgz"
   integrity sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==
 
 "@types/node@^16.11.22":
+<<<<<<< HEAD
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
+=======
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
   version "16.11.38"
   resolved "https://registry.npmjs.org/@types/node/-/node-16.11.38.tgz"
@@ -6461,7 +6479,11 @@ ms@2.0.0:
   integrity sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ms@2.1.2, ms@^2.1.1:
+=======
+ms@2.1.2:
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 =======
 ms@2.1.2:
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
@@ -6470,7 +6492,11 @@ ms@2.1.2:
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ms@2.1.3:
+=======
+ms@2.1.3, ms@^2.1.1:
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 =======
 ms@2.1.3, ms@^2.1.1:
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
@@ -7973,7 +7999,11 @@ run-parallel@^1.1.9:
     queue-microtask "^1.2.2"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 safe-buffer@5.1.2, safe-buffer@>=5.1.0, safe-buffer@^5.1.0, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+=======
+safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 =======
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
@@ -7982,7 +8012,11 @@ safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 safe-buffer@5.2.1, safe-buffer@~5.2.0:
+=======
+safe-buffer@5.2.1, safe-buffer@>=5.1.0, safe-buffer@^5.1.0, safe-buffer@~5.2.0:
+>>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
 =======
 safe-buffer@5.2.1, safe-buffer@>=5.1.0, safe-buffer@^5.1.0, safe-buffer@~5.2.0:
 >>>>>>> ffa1f31c3ca21f2d9afa0e0a65e8f295cf79e7c7
