@@ -1,0 +1,38 @@
+.imagem2{
+    background-image: url(https://i.imgur.com/0KYSl3Y.png);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.textos2{
+    font-weight: bold !important;
+    color: #054d3b !important;
+}
+
+.btnCancelar{
+    margin-right: 20px !important;
+    background-color: #90bd50!important;
+}
+
+.btnCadastrar{
+    background-color: #0E3F2B !important;
+    color: #e9ecef;
+}
+
+
+.background{
+    background-color: #bff1ce;
+}
+
+.text-decorator-none{
+    text-decoration: none !important;
+}
+
+.formulario{
+    background-color: white;
+}
+
+
