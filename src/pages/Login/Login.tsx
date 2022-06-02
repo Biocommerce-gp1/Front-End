@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Grid, Paper, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 import './Login.css';
+import UserLogin from '../../models/UserLogin';
 
 let navigate = useNavigate(); //antigo history = useHistory
     const [token, setToken] = useLocalStorage('token');
