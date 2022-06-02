@@ -26,7 +26,7 @@ function Login() {
                                         <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
                                     </Box>
                     
-                                    <Box>
+                                    <Box textAlign='center'>
                                         <Link to='/home' className='text-decoration'>
                                             <Button variant="contained" color="secondary" className="botao" type='submit'>
                                             Login

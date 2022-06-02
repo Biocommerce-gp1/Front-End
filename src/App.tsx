@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import Navbar from './componentes/estaticos/navbar/Navbar';
-import './App.css';
-
-function App() {
-  return (
-    <>
-    <Navbar />
-    </>
-=======
 import Login from './pages/Login/Login';
 import Navbar from './componentes/estaticos/navbar/Navbar'
 import Footer from './componentes/estaticos/footer/Footer'; 
@@ -34,7 +23,6 @@ function App() {
       </div>
       <Footer />
     </Router>
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
   );
 }
 

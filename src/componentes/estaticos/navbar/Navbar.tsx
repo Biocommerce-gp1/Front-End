@@ -5,10 +5,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import { styled, alpha } from '@mui/material/styles';
 import './Navbar.css';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,33 +54,24 @@ function Navbar() {
         <>
             <AppBar position="static">
                 <Toolbar className='fundo' variant="dense">
-<<<<<<< HEAD
-=======
 
                 <Link to='/home' className='text-decoration'>
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
-                    <Box style={{ cursor: "pointer" }} >
+                    <Box className='cursor' >
                         <Typography variant="h5" color="inherit">
                             Home
                         </Typography>
                     </Box>
-<<<<<<< HEAD
-=======
                 </Link>
 
                     <Link to='/sobre-nos' className='text-decoration'>
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
-                    <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box mx={1} className='cursor'>
                         <Typography variant="h6" color="inherit">
                             Sobre nós
                         </Typography>
                     </Box>
-<<<<<<< HEAD
-=======
                     </Link>
                     
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
-                    <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box mx={1} className='cursor'>
                         <Typography variant="h6" color="inherit">
                             Produtos
                         </Typography>
@@ -97,20 +85,13 @@ function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-<<<<<<< HEAD
-=======
                     <Link to='/login' className='text-decoration'>
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
-                    <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box mx={1} className='cursor'>
                         <Typography variant="h6" color="inherit">
                             Logout
                         </Typography>
                     </Box>
-<<<<<<< HEAD
-=======
                     </Link>
-                    
->>>>>>> 10d32028ef96a1f794635df27a63db06bca644f4
                 </Toolbar>
             </AppBar>
         </>
