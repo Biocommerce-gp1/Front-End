@@ -1,7 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid, Paper, Box, Typography, TextField, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+
+let navigate = useNavigate(); //antigo history = useHistory
+    const [token, setToken] = useLocalStorage('token');
+
+    const [UserLogin, setUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            usuario: '',
+            senha:'',
+            token: ''
+        })
+
+        function updatedModel(e: ChangeEvent<HTMLInputElement>)
+        {
+            setUserLogin({
+                ... UserLogin,
+                [e.target.name]: e.target.value
+            })
+        }
+
+        useEffect(()=>{
+            if (token != '')
+            {
+                navigate('/home')
+            }
+        }, [token])
+
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>) 
+        {
+            e.preventDefault();
+
+           try{
+                await login(`/usuarios/logar`, UserLogin, setToken)
+                alert('Usuário logado com sucesso!');
+                
+           }catch(error){
+                alert('Dados do usuário inconsistentes. Erro ao logar!');
+
+           }
+        }
 
 function Login() {
     return (
@@ -39,13 +79,11 @@ function Login() {
                                         <Typography variant='subtitle1' gutterBottom align='center'>
                                             Não tem uma conta?</Typography>
                                     </Box>
-                                    
+                                    <Link to='/cadastro'>
                                     <Typography variant='subtitle1' gutterBottom align='center' className='cadastrar-conta'>
                                         Cadastre-se</Typography>
-
+                                    </Link>
                                 </Box> 
-
-
                             </Box>
                         </Box>
                     </Box>
@@ -56,4 +94,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;

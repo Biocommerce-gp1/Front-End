@@ -6,6 +6,7 @@ import {  Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 import SobreNos from './pages/SobreNos/SobreNos';
 import Home from './pages/Home/Home';
+import CadastroUsuario from './pages/cadastro/CadastroUsuario';
 
 
 function App() {
@@ -13,12 +14,12 @@ function App() {
     <Router>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
-        <Routes> // Antigo Switch
+        <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path='/sobre-nos' element={<SobreNos />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/cadastro" element={<CadastroUsuario />} /> */}
+          <Route path="/cadastro" element={<CadastroUsuario />} />
         </Routes>
       </div>
       <Footer />
