@@ -1,5 +1,4 @@
 import React from 'react';
-import Login from './pages/Login/Login';
 import Navbar from './componentes/estaticos/navbar/Navbar'
 import Footer from './componentes/estaticos/footer/Footer'; 
 import {  Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
@@ -7,7 +6,7 @@ import './App.css';
 import SobreNos from './pages/SobreNos/SobreNos';
 import Home from './pages/Home/Home';
 import CadastroUsuario from './pages/cadastro/CadastroUsuario';
-
+import Login from './pages/login/Login';
 
 function App() {
   return (
