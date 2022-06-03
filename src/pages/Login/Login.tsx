@@ -8,6 +8,7 @@ import { login } from '../../services/Service';
 
 
 
+
 function Login() {
 
     let navigate = useNavigate(); //antigo history = useHistory
@@ -60,13 +61,15 @@ function Login() {
                                         Login
                                     </Typography>
 
-                                    <form id='form' onSubmit={onSubmit}>
+                                    <form onSubmit={onSubmit}>
                                         <Box marginY={4}>
-                                            <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="email" label="Email" required />
+                                            <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
+                                            id="standard-basic" label='E-mail' name='usuario' type='email' required fullWidth />
                                         </Box>
 
                                         <Box marginY={4}>
-                                            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="password" label="Senha" required />
+                                            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
+                                            className='form-input' id="standard-basic" label='Senha' name='senha' type='password' required fullWidth />
                                         </Box>
 
                                         <Box textAlign='center'>
