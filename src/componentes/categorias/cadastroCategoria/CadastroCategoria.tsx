@@ -1,10 +1,95 @@
 import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
-import Tema from '../../../models/Categoria';
+import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
+import { useNavigate, useParams } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 
 function CadastroCategoria() {
+
+    let navigate = useNavigate()
+
+    const { id } = useParams<{ id: string }>()
+
+    const [token, setToken] = useLocalStorage('token')
+
+    const [categoria, setCategoria] = useState<Categoria>({
+        id: 0,
+        secao: '',
+        descricao: ''
+    })
+
+    useEffect(() => {
+        if (token === "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+        }
+    }, [token])
+
+    async function findById(id: string) {
+        await buscaId(`/categorias/${id}`, setCategoria, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        setCategoria({
+            ...categoria,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+
+        if (id !== undefined) {
+
+            try {
+                await put(`/categorias`, categoria, setCategoria, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+
+                alert('Categoria atualizado com sucesso');
+
+            } catch (error) {
+                console.log(`Error: ${error}`)
+                alert("Erro, por favor verifique a quantidade minima de caracteres")
+            }
+
+        } else {
+
+            try {
+                await post(`/categorias`, categoria, setCategoria, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                
+                alert('Categoria cadastrado com sucesso');
+            
+            } catch (error) {
+                console.log(`Error: ${error}`)
+                alert("Erro, por favor verifique a quantidade minima de caracteres")
+            }
+        }
+        
+        back()
+    }
+
+    function back() {
+        navigate('/categorias')
+    }
   
     return (
         <Container maxWidth="sm" className="topo">
