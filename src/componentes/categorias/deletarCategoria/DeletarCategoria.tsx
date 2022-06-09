@@ -15,7 +15,7 @@ function DeletarCategoria() {
 
     const [token, setToken] = useLocalStorage('token');
 
-    const [tema, setCategoria] = useState<Categoria>()
+    const [categoria, setCategoria] = useState<Categoria>()
 
     useEffect(() => {
         if (token === "") {
@@ -26,13 +26,13 @@ function DeletarCategoria() {
     }, [token])
 
     useEffect(() => {
-        if (id !== '') {
+        if (id !== undefined) {
             findById(id)
         }
     }, [id])
 
     async function findById(id: string) {
-        await buscaId(`/categorias/${id}`, setCategoria, {
+        await buscaId(`/categoria/${id}`, setCategoria, {
             headers: {
                 'Authorization': token
             }
@@ -40,10 +40,10 @@ function DeletarCategoria() {
     }
 
     async function sim() {
-        navigate('/categorias')
+        navigate('/categoria')
 
         try {
-            await deleteId(`/categorias/${id}`, {
+            await deleteId(`/categoria/${id}`, {
                 headers: {
                     'Authorization': token
                 }
@@ -58,7 +58,7 @@ function DeletarCategoria() {
     }
 
     function nao() {
-        navigate('/categorias')
+        navigate('/categoria')
     }
 
     return (
@@ -71,7 +71,7 @@ function DeletarCategoria() {
                                 Deseja deletar a Categoria:
                             </Typography>
                             <Typography color="textSecondary">
-                                { tema?.descricao }
+                                { categoria?.descricao }
                             </Typography>
                         </Box>
                     </CardContent>

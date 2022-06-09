@@ -28,7 +28,7 @@ function CadastroCategoria() {
     }, [token])
 
     async function findById(id: string) {
-        await buscaId(`/categorias/${id}`, setCategoria, {
+        await buscaId(`/categoria/${id}`, setCategoria, {
             headers: {
                 'Authorization': token
             }
@@ -54,7 +54,7 @@ function CadastroCategoria() {
         if (id !== undefined) {
 
             try {
-                await put(`/categorias`, categoria, setCategoria, {
+                await put(`/categoria`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
@@ -70,7 +70,7 @@ function CadastroCategoria() {
         } else {
 
             try {
-                await post(`/categorias`, categoria, setCategoria, {
+                await post(`/categoria`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }

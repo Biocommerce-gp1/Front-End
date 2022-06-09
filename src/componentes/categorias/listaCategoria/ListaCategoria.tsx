@@ -23,7 +23,7 @@ function ListaCategoria(){
   }, [token])
 
   async function getCategoria() {
-    await busca("/categorias", setCategorias, {
+    await busca("/categoria", setCategorias, {
       headers: {
         'Authorization': token
       }
@@ -56,7 +56,7 @@ function ListaCategoria(){
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5} >
 
-                  <Link to={`/formularioTema/${ categoria.id }`} className="text-decorator-none">
+                  <Link to={`/formularioCategoria/${ categoria.id }`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         Atualizar
@@ -64,7 +64,7 @@ function ListaCategoria(){
                     </Box>
                   </Link>
 
-                  <Link to={`/deletarTema/${ categoria.id }`} className="text-decorator-none">
+                  <Link to={`/deletarCategoria/${ categoria.id }`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         Deletar
