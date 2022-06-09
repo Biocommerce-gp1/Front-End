@@ -9,7 +9,7 @@ import './SobreNos.css';
 function SobreNos() {
   return (
     <>
-      <Grid className='background' container direction="row" justifyContent="center" alignItems="center">
+      <Grid className='backgroundSobre' container direction="row" justifyContent="center" alignItems="center">
         <Grid alignItems="center" item md={10}>
           <Box paddingX={0} className='txt-home'>
             <Typography variant="h3" gutterBottom component="h3" align="center">Sobre nós!</Typography>
@@ -124,14 +124,6 @@ function SobreNos() {
             </div>
 
           </Grid>
-
-          <Box display="flex" alignItems="center" justifyContent="center">
-
-            <Box marginRight={1}>
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item xs={6} >
         </Grid>
       </Grid>
     </>

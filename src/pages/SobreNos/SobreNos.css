@@ -1,5 +1,6 @@
 .backgroundSobre {
-  background-color: #c3e0da;
+  background-color: #c3e0da !important;
+  height: 100vh;
 }
 
 .devs {
