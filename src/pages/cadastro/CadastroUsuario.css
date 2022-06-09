@@ -15,11 +15,15 @@
 .btnCancelar{
     margin-right: 20px !important;
     background-color: #90bd50!important;
+    width: 100px;
+    height: 40px;
 }
 
 .btnCadastrar{
     background-color: #0E3F2B !important;
     color: #e9ecef;
+    width: 100px;
+    height: 40px;
 }
 
 
