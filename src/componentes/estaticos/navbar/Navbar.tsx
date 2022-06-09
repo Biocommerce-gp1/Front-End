@@ -54,6 +54,7 @@ function Navbar() {
     <>
       <AppBar position="static">
         <Toolbar className="fundo" variant="dense">
+          <Link to="/home">
           <Box>
             <img
               src="https://i.imgur.com/gCESJH1.png"
@@ -62,6 +63,7 @@ function Navbar() {
               width={80}
             />
           </Box>
+          </Link>
           <Link to="/home" className="text-decoration">
             <Box className="cursor">
               <Typography variant="h5" color="inherit">
@@ -92,8 +94,8 @@ function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <Link to="/login" className="text-decoration">
-            <Box mx={1} className="cursor">
+          <Link to="/login" className="text-decoration2">
+            <Box marginLeft={80} className="cursor">
               <Typography variant="h6" color="inherit">
                 Logout
               </Typography>

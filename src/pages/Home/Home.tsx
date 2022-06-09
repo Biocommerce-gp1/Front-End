@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
     <Box className='img'>
-        <img src="https://i.imgur.com/gczGVM1.jpg" alt="logo biocommerce"/>
+       
     </Box>
     
     </>
