@@ -1,4 +1,4 @@
-import React, {useState, useEffect, ChangeEvent} from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
@@ -75,28 +75,28 @@ function CadastroCategoria() {
                         'Authorization': token
                     }
                 })
-                
+
                 alert('Categoria cadastrado com sucesso');
-            
+
             } catch (error) {
                 console.log(`Error: ${error}`)
                 alert("Erro, por favor verifique a quantidade minima de caracteres")
             }
         }
-        
+
         back()
     }
 
     function back() {
-        navigate('/categorias')
+        navigate('/categoria')
     }
-  
+
     return (
         <Container maxWidth="sm" className="topo">
-            <form>
+            <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de Cadastro Categoria</Typography>
-                <TextField id="secao" label="secao" variant="outlined" name="secao" margin="normal" fullWidth />
-                <TextField id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <TextField value={categoria.secao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="secao" label="secao" variant="outlined" name="secao" margin="normal" fullWidth />
+                <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
