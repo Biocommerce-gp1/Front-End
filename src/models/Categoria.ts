@@ -1,5 +1,6 @@
 interface Categoria{
-    id: number
+    id: number;
+    secao: string;
     descricao: string
 }
 
