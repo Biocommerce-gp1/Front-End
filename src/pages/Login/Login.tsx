@@ -47,6 +47,7 @@ function Login() {
       alert("Dados do usuário inconsistentes. Erro ao logar!");
     }
   }
+
   return (
     <>
       <Grid container className="background">
@@ -77,18 +78,19 @@ function Login() {
                   Login
                 </Typography>
 
-                <form id="form" onSubmit={onSubmit}>
+                <form onSubmit={onSubmit}>
                   <Box marginY={4}>
                     <TextField
                       value={userLogin.usuario}
                       onChange={(e: ChangeEvent<HTMLInputElement>) =>
                         updatedModel(e)
                       }
-                      className="form-input"
                       id="standard-basic"
+                      label="E-mail"
+                      name="usuario"
                       type="email"
-                      label="Email"
                       required
+                      fullWidth
                     />
                   </Box>
 
@@ -100,9 +102,11 @@ function Login() {
                       }
                       className="form-input"
                       id="standard-basic"
-                      type="password"
                       label="Senha"
+                      name="senha"
+                      type="password"
                       required
+                      fullWidth
                     />
                   </Box>
 
