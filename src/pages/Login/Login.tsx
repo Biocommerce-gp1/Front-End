@@ -21,6 +21,7 @@ function Login() {
     id: 0,
     usuario: "",
     senha: "",
+    tipo: "",
     token: "",
   });
 
@@ -36,6 +37,12 @@ function Login() {
       navigate("/home");
     }
   }, [token]);
+
+  useEffect(() => {
+    if (userLogin.tipo === 'administrador') {
+        navigate('/login')
+    }
+}, [userLogin])
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();

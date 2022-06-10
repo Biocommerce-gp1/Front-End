@@ -16,7 +16,7 @@ function CadastroUsuario() {
         nome: "",
         usuario: "",
         senha: "",
-        foto: ""
+        tipo: ""
     })
 
     const [userResult, setUserResult] = useState<User>({
@@ -24,7 +24,7 @@ function CadastroUsuario() {
         nome: "",
         usuario: "",
         senha: "",
-        foto: ""
+        tipo: ""
     })
 
     useEffect(() => {
@@ -78,9 +78,6 @@ function CadastroUsuario() {
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='nome' label='Nome' variant='outlined' name='nome' margin='normal' required fullWidth className='formulario' />
-
-                        <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id='foto' label='Foto' variant='outlined' name='foto' margin='normal' fullWidth className='formulario' />
 
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' required fullWidth className='formulario' />

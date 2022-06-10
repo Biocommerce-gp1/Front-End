@@ -12,6 +12,7 @@ import CadastroCategoria from './componentes/categorias/cadastroCategoria/Cadast
 import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
 import ListaProduto from './componentes/produto/listaProduto/ListaProduto';
 import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto';
+import CadastroAdm from './pages/cadastroAdm/CadastroAdm';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path="/produto" element={<ListaProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-
+          <Route path="/adm" element={<CadastroAdm />} />
 
         </Routes>
       </div>
