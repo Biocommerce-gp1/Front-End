@@ -84,7 +84,7 @@ function CadastroAdm() {
                             <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' name='confirmarSenha' margin='normal'
                                 type='password' required fullWidth />
 
-                            <DropDown /> 
+                            <DropDown />    
 
                                 <Box marginTop={2} textAlign='center'>
                                     <Link to='/login' className='text-decoration'>
