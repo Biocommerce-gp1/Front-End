@@ -9,7 +9,6 @@ function CadastroAdm() {
     let navigate = useNavigate()
 
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
-    const [usuario, setUsuario] = useState<User[]>([])
 
     const [user, setUser] = useState<User>({
         id: 0,

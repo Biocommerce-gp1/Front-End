@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+
 
 import Categoria from '../../../models/Categoria';
 import { busca } from '../../../services/Service';
@@ -9,6 +9,7 @@ import { busca } from '../../../services/Service';
 import './ListaCategoria.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 function ListaCategoria() {
 
   let navigate = useNavigate()
@@ -20,7 +21,16 @@ function ListaCategoria() {
 );
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
       navigate("/login")
     }
   }, [token])

@@ -82,6 +82,7 @@ function DeletarCategoria() {
                 Deseja deletar a Categoria:
               </Typography>
               <Typography color="textSecondary">
+                {categoria?.secao}
                 {categoria?.descricao}
               </Typography>
             </Box>
