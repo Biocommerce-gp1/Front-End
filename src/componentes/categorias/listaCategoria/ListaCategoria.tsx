@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+
 
 import Categoria from '../../../models/Categoria';
 import { busca } from '../../../services/Service';
 
 import './ListaCategoria.css';
+import { toast } from 'react-toastify';
 function ListaCategoria(){
 
     let navigate = useNavigate()
 
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
-  const [token, setToken] = useLocalStorage('token')
+  const [token, setToken] = useState('token')
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
       navigate("/login")
     }
   }, [token])
