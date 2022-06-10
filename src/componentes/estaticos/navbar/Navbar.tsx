@@ -55,14 +55,14 @@ function Navbar() {
       <AppBar position="static">
         <Toolbar className="fundo" variant="dense">
           <Link to="/home">
-          <Box>
-            <img
-              src="https://i.imgur.com/gCESJH1.png"
-              alt="Logo Biocommerce"
-              height={80}
-              width={80}
-            />
-          </Box>
+            <Box>
+              <img
+                src="https://i.imgur.com/gCESJH1.png"
+                alt="Logo Biocommerce"
+                height={80}
+                width={80}
+              />
+            </Box>
           </Link>
           <Link to="/home" className="text-decoration">
             <Box className="cursor">
@@ -79,12 +79,20 @@ function Navbar() {
               </Typography>
             </Box>
           </Link>
-
+          <Link to="/produto" className="text-decoration">
           <Box mx={1} className="cursor">
             <Typography variant="h6" color="inherit">
               Produtos
             </Typography>
           </Box>
+          </Link>
+          <Link to="/categoria" className="text-decoration">
+          <Box mx={1} className="cursor">
+            <Typography variant="h6" color="inherit">
+              Categorias
+            </Typography>
+          </Box>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

@@ -44,7 +44,7 @@ function ListaCategoria(){
               <CardContent>
 
                 <Typography color="textSecondary" gutterBottom>
-                  Categoria
+                  {categoria.secao}
                 </Typography>
 
                 <Typography variant="h5" component="h2">
