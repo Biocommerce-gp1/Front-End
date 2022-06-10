@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@material-ui/core";
+import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import Produto from "../../../models/Produto";
 import { busca } from "../../../services/Service";
-
-import "./ListaProduto.css";
+import './ListaProduto.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from "react-toastify";
 
 function ListaProduto() {
   let navigate = useNavigate();
 
-  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [produtos, setProdutos] = useState<Produto[]>([])
 
-  const [token, setToken] = useState("token");
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token === "") {
@@ -32,7 +28,7 @@ function ListaProduto() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
+      });
       navigate("/login");
     }
   }, [token]);
