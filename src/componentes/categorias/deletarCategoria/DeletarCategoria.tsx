@@ -50,7 +50,7 @@ function DeletarCategoria() {
         }
 
         function sim() {
-            navigate('/categorias')
+            navigate('/categoria')
             deleteId(`/categoria/${id}`, {
               headers: {
                 'Authorization': token
@@ -69,7 +69,7 @@ function DeletarCategoria() {
           }
         
           function nao() {
-            navigate('/categorias')
+            navigate('/categoria')
           }
           
   return (
@@ -82,6 +82,7 @@ function DeletarCategoria() {
                 Deseja deletar a Categoria:
               </Typography>
               <Typography color="textSecondary">
+                {categoria?.secao}
                 {categoria?.descricao}
               </Typography>
             </Box>
