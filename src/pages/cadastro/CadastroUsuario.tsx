@@ -16,7 +16,7 @@ function CadastroUsuario() {
         nome: "",
         usuario: "",
         senha: "",
-        foto: ""
+        tipo: ""
     })
 
     const [userResult, setUserResult] = useState<User>({
@@ -24,7 +24,7 @@ function CadastroUsuario() {
         nome: "",
         usuario: "",
         senha: "",
-        foto: ""
+        tipo: ""
     })
 
     useEffect(() => {
@@ -80,9 +80,6 @@ function CadastroUsuario() {
                             id='nome' label='Nome' variant='outlined' name='nome' margin='normal' required fullWidth className='formulario' />
 
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id='foto' label='Foto' variant='outlined' name='foto' margin='normal' fullWidth className='formulario' />
-
-                        <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' required fullWidth className='formulario' />
 
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -91,6 +88,7 @@ function CadastroUsuario() {
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' required fullWidth className='formulario' />
 
+                        
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
                                 <Button variant='contained' color='secondary' className='btnCancelar'>
