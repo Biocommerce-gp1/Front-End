@@ -134,4 +134,4 @@ function NavbarAdm() {
     )
 }
 
-export default NavbarAdm
+export default NavbarAdm;

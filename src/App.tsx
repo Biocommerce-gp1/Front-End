@@ -28,7 +28,7 @@ function App() {
           <Route path="/formularioCategoria" element={<CadastroCategoria />} />
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-          <Route path='/adm' element={<CadastroAdm />} />
+          <Route path='/admin' element={<CadastroAdm />} />
         </Routes>
       </div>
       <Footer />

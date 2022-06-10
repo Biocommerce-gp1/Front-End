@@ -108,4 +108,4 @@ function CadastroAdm() {
     )
 }
 
-export default CadastroAdm
+export default CadastroAdm;
