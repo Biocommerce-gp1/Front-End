@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import ListaProduto from './componentes/produto/listaProduto/ListaProduto';
 import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto';
+import CadastroProduto from './componentes/produto/cadastroProduto/CadastroProduto';
 
 
 function App() {
@@ -36,7 +37,8 @@ function App() {
           <Route path='/admin' element={<CadastroAdm />} />
           <Route path="/produto" element={<ListaProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-
+          <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
+          <Route path="/formularioProduto" element={<CadastroProduto />} />
 
         </Routes>
       </div>

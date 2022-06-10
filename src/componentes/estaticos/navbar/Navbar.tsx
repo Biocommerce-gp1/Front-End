@@ -93,6 +93,7 @@ function Navbar() {
             </Typography>
           </Box>
           </Link>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
