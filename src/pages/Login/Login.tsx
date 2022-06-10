@@ -12,11 +12,12 @@ import useLocalStorage from "react-use-localstorage";
 import "./Login.css";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
+import { AdminPanelSettingsTwoTone } from "@mui/icons-material";
 
 function Login() {
   let navigate = useNavigate(); //antigo history = useHistory
   const [token, setToken] = useLocalStorage("token");
-
+  const [adm, setAdm] = useLocalStorage("adm")
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
