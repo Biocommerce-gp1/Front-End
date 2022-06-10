@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 
@@ -13,13 +15,24 @@ function DeletarCategoria() {
 
     const { id } = useParams<{ id: string }>();
 
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     const [categoria, setCategoria] = useState<Categoria>()
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+           toast.error('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
             navigate("/login")
 
         }
@@ -49,13 +62,33 @@ function DeletarCategoria() {
                 }
             });
             
-            alert('Categoria deletada com sucesso');
+            toast.success('Categoria deletada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            }
             
-        } catch (error) {
-            alert('Erro ao deletar');
+         catch (error) {
+            toast.success('Erro ao Deletar', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            }
         }
 
-    }
+    
 
     function nao() {
         navigate('/categoria')
