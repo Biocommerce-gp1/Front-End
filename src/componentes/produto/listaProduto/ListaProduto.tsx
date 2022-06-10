@@ -7,6 +7,8 @@ import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service';
 
 import './ListaProduto.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaProduto() {
 
@@ -14,7 +16,9 @@ function ListaProduto() {
 
   const [produtos, setProdutos] = useState<Produto[]>([])
 
-  const [token, setToken] = useLocalStorage("token")
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
 
   useEffect(() => {
     if (token === "") {
