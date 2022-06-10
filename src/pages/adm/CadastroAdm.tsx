@@ -1,13 +1,15 @@
 import { Box, Button, Grid, MenuItem, TextField, Typography } from '@material-ui/core'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import User from '../../../models/User'
-import { cadastroUsuario } from '../../../services/Service'
+import User from '../../models/User'
+import { cadastroUsuario, post } from '../../services/Service'
+import DropDown from '../../componentes/dropDown/DropDown';
 
 function CadastroAdm() {
     let navigate = useNavigate()
 
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    const [usuario, setUsuario] = useState<User[]>([])
 
     const [user, setUser] = useState<User>({
         id: 0,
@@ -83,7 +85,7 @@ function CadastroAdm() {
                             <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' name='confirmarSenha' margin='normal'
                                 type='password' required fullWidth />
 
-                            
+                                <DropDown />
 
                                 <Box marginTop={2} textAlign='center'>
                                     <Link to='/login' className='text-decoration'>

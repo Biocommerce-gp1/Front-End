@@ -10,8 +10,8 @@ import Login from './pages/login/Login';
 import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
-import Adm from './pages/adm/Adm';
-import CadastroAdm from './pages/adm/loginAdm/CadastroAdm';
+import CadastroAdm from './pages/adm/CadastroAdm';
+
 
 function App() {
   return (
