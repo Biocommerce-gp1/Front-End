@@ -66,7 +66,7 @@ function CadastroProduto() {
     }, [id])
 
     async function getCategoria() {
-        await busca("/categoria", setCategoria, {
+        await busca("/categoria", setCategorias, {
             headers: {
                 'Authorization': token
             }
@@ -158,7 +158,7 @@ function CadastroProduto() {
                         })}>
                         {
                             categorias.map(categoria => (
-                                <MenuItem value={categoria.id}>{categoria.descricao}</MenuItem>
+                                <MenuItem value={categoria.id}>{categoria.secao}</MenuItem>
                             ))
                         }
                     </Select>

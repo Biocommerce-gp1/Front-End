@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import ListaProduto from './componentes/produto/listaProduto/ListaProduto';
 import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto';
+import CadastroProduto from './componentes/produto/cadastroProduto/CadastroProduto';
 
 
 function App() {
