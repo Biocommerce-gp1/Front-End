@@ -1,7 +1,8 @@
 // comando rfce
 import React from 'react';
 import "./Footer.css";
-import { Typography, Box, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { Box } from '@mui/material';
 import { GitHub } from '@material-ui/icons';
 
 function Footer() {

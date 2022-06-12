@@ -1,8 +1,9 @@
-import { Box, Button, Grid, MenuItem, TextField, Typography } from '@material-ui/core'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import User from '../../models/User'
-import { cadastroUsuario, post } from '../../services/Service'
+import { ChangeEvent, useEffect, useState } from 'react';
+import { Button, Grid, MenuItem, TextField, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import User from '../../models/User';
+import { cadastroUsuario, post } from '../../services/Service';
 import DropDown from '../../componentes/dropDown/DropDown';
 
 function CadastroAdm() {

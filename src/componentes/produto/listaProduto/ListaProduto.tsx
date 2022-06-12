@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Box } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import Produto from "../../../models/Produto";
 import { busca } from "../../../services/Service";

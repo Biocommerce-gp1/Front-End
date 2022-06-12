@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import './Home.css'
-import { Box, Button } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import './Home.css';
+import { Button } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';

@@ -1,5 +1,6 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { Box } from '@mui/material';
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
