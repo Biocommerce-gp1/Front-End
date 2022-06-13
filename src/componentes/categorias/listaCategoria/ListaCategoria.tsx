@@ -10,17 +10,10 @@ import './ListaCategoria.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
-<<<<<<< HEAD
 function ListaCategoria(){
 
     let navigate = useNavigate()
 
-=======
-function ListaCategoria() {
-
-  let navigate = useNavigate()
-
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -55,17 +48,10 @@ function ListaCategoria() {
     getCategoria()
   }, [categorias.length])
 
-<<<<<<< HEAD
     return(
         <>
         {
             categorias.map(categoria =>(
-=======
-  return (
-    <>
-      {
-        categorias.map(categoria => (
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
 
 <Box m={2} >
             <Card variant="outlined">
@@ -73,13 +59,6 @@ function ListaCategoria() {
 
                 <Typography color="textSecondary" gutterBottom>
                   Categoria
-<<<<<<< HEAD
-=======
-                </Typography>
-
-                <Typography variant="h6" component="h2">
-                  {categoria.secao}
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
                 </Typography>
 
                 <Typography variant="h5" component="h2">
@@ -95,11 +74,7 @@ function ListaCategoria() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5} >
 
-<<<<<<< HEAD
                   <Link to={`/formularioTema/${ categoria.id }`} className="text-decorator-none">
-=======
-                  <Link to={`/formularioTema/${categoria.id}`} className="text-decorator-none">
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         Atualizar
@@ -107,11 +82,7 @@ function ListaCategoria() {
                     </Box>
                   </Link>
 
-<<<<<<< HEAD
                   <Link to={`/deletarTema/${ categoria.id }`} className="text-decorator-none">
-=======
-                  <Link to={`/deletarTema/${categoria.id}`} className="text-decorator-none">
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         Deletar
@@ -124,17 +95,10 @@ function ListaCategoria() {
 
             </Card>
           </Box>
-<<<<<<< HEAD
           ))
           }
         </>
     )
-=======
-        ))
-      }
-    </>
-  )
->>>>>>> bb082736d90e0d35afcf765acae644d951404a67
 }
 
 export default ListaCategoria;
