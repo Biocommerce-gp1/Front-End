@@ -8,19 +8,22 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
-
 import Categoria from "../../../models/Categoria";
 import { busca } from "../../../services/Service";
-
 import "./ListaCategoria.css";
 import { toast } from "react-toastify";
+import "./ListaCategoria.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+
 function ListaCategoria() {
   let navigate = useNavigate();
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const [token, setToken] = useState("token");
-
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   useEffect(() => {
     if (token === "") {
       toast.error("Você precisa estar logado", {
@@ -55,13 +58,29 @@ function ListaCategoria() {
         <Box m={2}>
           <Card variant="outlined">
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                {categoria.secao}
-              </Typography>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+                  <Link
+                    to={`/formularioCategoria/${categoria.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="marginLeft"
+                        size="small"
+                        color="primary"
+                      >
+                        Atualizar
+                      </Button>
+                    </Box>
+                  </Link>
 
-              <Typography variant="h5" component="h2">
-                {categoria.descricao}
-              </Typography>
+                  <Typography variant="h5" component="h2">
+                    {categoria.descricao}
+                  </Typography>
+                </Box>
+              </CardActions>
             </CardContent>
 
             <CardActions>

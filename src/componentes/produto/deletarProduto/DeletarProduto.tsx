@@ -1,63 +1,54 @@
-import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@material-ui/core";
-import { useNavigate, useParams } from "react-router-dom";
-import Produto from "../../../models/Produto";
-import { buscaId, deleteId } from "../../../services/Service";
-import "./DeletarProduto.css";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from 'react'
+import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { useNavigate, useParams } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
+
+import Produto from '../../../models/Produto';
+import { buscaId, deleteId } from '../../../services/Service';
+
+import './DeletarProduto.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function DeletarProduto() {
   let navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
 
-  const [token, setToken] = useState("token");
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+    const [produtos, setProdutos] = useState<Produto>()
 
-  const [produtos, setProdutos] = useState<Produto>();
+    useEffect(() => {
+        if (token === "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
 
-  useEffect(() => {
-    if (token === "") {
-      toast.error('Você precisa estar logado', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-    });
-      navigate("/login");
+        }
+    }, [token])
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
+
+    async function findById(id: string) {
+        buscaId(`/produto/${id}`, setProdutos, {
+            headers: {
+                'Authorization': token
+            }
+        })
     }
-  }, [token]);
-
-  useEffect(() => {
-    if (id !== undefined) {
-      findById(id);
-    }
-  }, [id]);
-
-  async function findById(id: string) {
-    buscaId(`/produto/${id}`, setProdutos, {
-      headers: {
-        Authorization: token,
-      },
-    });
-  }
 
   async function sim() {
     navigate("/produto");
 
     await deleteId(`/produto/${id}`, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
 

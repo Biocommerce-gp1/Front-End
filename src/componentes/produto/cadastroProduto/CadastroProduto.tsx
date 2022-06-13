@@ -66,7 +66,7 @@ function CadastroProduto() {
     }, [id])
 
     async function getCategoria() {
-        await busca("/categoria", setCategoria, {
+        await busca("/categoria", setCategorias, {
             headers: {
                 'Authorization': token
             }
@@ -147,7 +147,7 @@ function CadastroProduto() {
                 <TextField value={produto.desconto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="desconto" label="Desconto" name="desconto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
@@ -158,7 +158,7 @@ function CadastroProduto() {
                         })}>
                         {
                             categorias.map(categoria => (
-                                <MenuItem value={categoria.id}>{categoria.descricao}</MenuItem>
+                                <MenuItem value={categoria.id}>{categoria.secao}</MenuItem>
                             ))
                         }
                     </Select>

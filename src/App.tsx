@@ -7,12 +7,15 @@ import SobreNos from './pages/SobreNos/SobreNos';
 import Home from './pages/Home/Home';
 import CadastroUsuario from './pages/cadastro/CadastroUsuario';
 import Login from './pages/login/Login';
-import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
 import CadastroAdm from './pages/adm/CadastroAdm';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import ListaCategoria from "./componentes/categorias/listaCategoria/ListaCategoria";
+import ListaProduto from './componentes/produto/listaProduto/ListaProduto';
+import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto';
+import CadastroProduto from './componentes/produto/cadastroProduto/CadastroProduto';
 
 
 function App() {
@@ -32,6 +35,11 @@ function App() {
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path='/admin' element={<CadastroAdm />} />
+          <Route path="/produto" element={<ListaProduto />} />
+          <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+          <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
+          <Route path="/formularioProduto" element={<CadastroProduto />} />
+
         </Routes>
       </div>
       <Footer />
