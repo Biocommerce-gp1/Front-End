@@ -25,7 +25,7 @@ function App() {
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes> 
-          <Route path="/" element={<Home />} />
+         <Route path='/' element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path='/sobre-nos' element={<SobreNos />} />
           <Route path="/home" element={<Home />} />
@@ -35,6 +35,11 @@ function App() {
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path='/adm' element={<CadastroAdm />} />
+          <Route path="/produto" element={<ListaProduto />} />
+          <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+          <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
+          <Route path="/formularioProduto" element={<CadastroProduto />} />
+
         </Routes>
       </div>
       <Footer />

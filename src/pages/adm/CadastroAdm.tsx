@@ -68,7 +68,7 @@ function CadastroAdm() {
     }
     return (
         <>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='background'>
+            <Grid container direction='row' justifyContent='center' alignItems='center'>
                 <Grid item xs={6} className='imagem2'></Grid>
                 <Grid item xs={6} alignItems='center'>
                     <Box paddingX={10}>
@@ -84,20 +84,24 @@ function CadastroAdm() {
                             <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' name='confirmarSenha' margin='normal'
                                 type='password' required fullWidth />
 
-                            <DropDown />    
+                            <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} name='tipo' label="Tipo" margin='normal' type='name' required fullWidth />
 
-                                <Box marginTop={2} textAlign='center'>
-                                    <Link to='/login' className='text-decoration'>
-                                        <Button variant='contained' color='secondary' className='button'>
-                                            Cancelar
-                                        </Button>
-                                    </Link>
+                                {/* <select id="">
+                                    <option onChange={(e: ChangeEvent<HTMLOptionElement>) => updatedModel(e)} name="tipo" value="adm">Administrador</option>
+                                </select> */}
 
-                                    <Button type='submit' variant='contained' color='primary' className='button'>
-                                        Cadastrar
+                            <Box marginTop={2} textAlign='center'>
+                                <Link to='/login' className='text-decoration'>
+                                    <Button variant='contained' color='secondary' className='button'>
+                                        Cancelar
                                     </Button>
+                                </Link>
 
-                                </Box>
+                                <Button type='submit' variant='contained' color='primary' className='button'>
+                                    Cadastrar
+                                </Button>
+
+                            </Box>
                         </form>
                     </Box>
                 </Grid>

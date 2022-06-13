@@ -106,7 +106,7 @@ function NavbarAdm() {
                 </Box>
             </Link>
 
-            <Link to="/categoria" className="text-decoration">
+            <Link to={`/formularioProduto`} className="text-decoration">
                 <Box mx={1} className="cursor">
                     <Typography variant="button" color="inherit">
                         Cadastrar Produto

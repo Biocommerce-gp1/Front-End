@@ -18,6 +18,7 @@ function Login() {
     id: 0,
     usuario: "",
     senha: "",
+    tipo: "",
     token: "",
   });
 

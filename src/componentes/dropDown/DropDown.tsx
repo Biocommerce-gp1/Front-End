@@ -21,11 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function ControlledOpenSelect() {
   const classes = useStyles();
-  const [administrador, setAdministrador] = React.useState<string | number>('');
+  const [adm, setAdm] = React.useState<string | number>('');
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAdministrador(event.target.value as number);
+    setAdm(event.target.value as number);
   };
 
   const handleClose = () => {
@@ -46,7 +46,7 @@ export default function ControlledOpenSelect() {
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={administrador}
+          value={adm}
           onChange={handleChange}
         >
           <MenuItem value='administrador'>Administrador</MenuItem>

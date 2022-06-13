@@ -5,28 +5,33 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import User from '../../models/User';
 function Home() {
 
-  const navigate = useNavigate()
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  const user = useSelector<User>(state => state.tipo);
+  console.log(user);
 
-  useEffect(() => {
-    if (token === "") {
-      toast.error("Você precisa estar logado", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-      })
-      navigate('/login')
-    }
-  }, [token])
+  
+  // const navigate = useNavigate()
+  // const token = useSelector<TokenState, TokenState["tokens"]>(
+  //   (state) => state.tokens
+  // );
+
+  // useEffect(() => {
+  //   if (token === "") {
+  //     toast.error("Você precisa estar logado", {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: false,
+  //       draggable: false,
+  //       theme: "colored",
+  //       progress: undefined,
+  //     })
+  //     navigate('/login')
+  //   }
+  // }, [token])
 
 
   return (

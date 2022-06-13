@@ -86,7 +86,7 @@ function CadastroCategoria() {
 
             } catch (error) {
                 console.log(`Error: ${error}`)
-                toast.success("Erro, por favor verifique a quantidade minima de caracteres", {
+                toast.error("Erro, por favor verifique a quantidade minima de caracteres", {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -120,7 +120,7 @@ function CadastroCategoria() {
                 });
             } catch (error) {
                 console.log(`Error: ${error}`)
-                toast.success("Erro, por favor verifique a quantidade minima de caracteres", {
+                toast.error("Erro, por favor verifique a quantidade minima de caracteres", {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -56,19 +57,35 @@ function CadastroUsuario() {
 
             } catch (error) {
                 console.log(`Error: ${error}`)
-
-                alert("Tá dando erro no cod")
-            }
+                toast.error("Insira uma senha de no mínimo 8 caracteres!", {
+                          position: "top-right",
+                          autoClose: 2000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: false,
+                          draggable: false,
+                          theme: "colored",
+                          progress: undefined,
+            })
+        }
 
         } else {
-            alert('Dados inconsistentes! Por favor, verifique as informações passadas')
+            toast.error('Dados inconsistentes! Por favor, verifique as informações passadas', {
+                position: "top-right",
+                          autoClose: 2000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: false,
+                          draggable: false,
+                          theme: "colored",
+                          progress: undefined,
+            });
 
             setUser({ ...user, senha: "" })
             setConfirmarSenha("")
         }
 
     }
-
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center' className='background'>
             <Grid item xs={6} ></Grid>
@@ -110,5 +127,4 @@ function CadastroUsuario() {
         </Grid>
     );
 }
-
 export default CadastroUsuario;
