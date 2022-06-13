@@ -57,6 +57,14 @@ function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
+
+    // const id = useSelctor...
+
+  //Service buscaId(id)
+
+  //const [user, setUser] = useState<User>
+
+
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -74,6 +82,17 @@ function Navbar() {
     });
     navigate("/login");
   }
+
+
+  // let navbar
+
+  /*
+    if(user.tipo === "admin")
+      navbar = adm
+    else{
+      navbar = comum
+    }
+  */
 
   return (
     <>
