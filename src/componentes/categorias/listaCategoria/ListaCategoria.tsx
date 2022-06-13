@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
+import { Link, useNavigate } from "react-router-dom";
 
+import Categoria from "../../../models/Categoria";
+import { busca } from "../../../services/Service";
 
-import Categoria from '../../../models/Categoria';
-import { busca } from '../../../services/Service';
+import "./ListaCategoria.css";
+import { toast } from "react-toastify";
+function ListaCategoria() {
+  let navigate = useNavigate();
 
-import './ListaCategoria.css';
-import { toast } from 'react-toastify';
-function ListaCategoria(){
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-    let navigate = useNavigate()
-
-  const [categorias, setCategorias] = useState<Categoria[]>([])
-
-  const [token, setToken] = useState('token')
+  const [token, setToken] = useState("token");
 
   useEffect(() => {
     if (token === "") {
-      toast.error('Você precisa estar logado', {
+      toast.error("Você precisa estar logado", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -27,70 +32,73 @@ function ListaCategoria(){
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
-      navigate("/login")
+      });
+      navigate("/login");
     }
-  }, [token])
+  }, [token]);
 
   async function getCategoria() {
     await busca("/categoria", setCategorias, {
       headers: {
-        'Authorization': token
-      }
-    })
+        Authorization: token,
+      },
+    });
   }
 
   useEffect(() => {
-    getCategoria()
-  }, [categorias.length])
+    getCategoria();
+  }, [categorias.length]);
 
-    return(
-        <>
-        {
-            categorias.map(categoria =>(
+  return (
+    <>
+      {categorias.map((categoria) => (
+        <Box m={2}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography color="textSecondary" gutterBottom>
+                {categoria.secao}
+              </Typography>
 
-<Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
+              <Typography variant="h5" component="h2">
+                {categoria.descricao}
+              </Typography>
+            </CardContent>
 
-                <Typography color="textSecondary" gutterBottom>
-                  {categoria.secao}
-                </Typography>
+            <CardActions>
+              <Box display="flex" justifyContent="center" mb={1.5}>
+                <Link
+                  to={`/formularioCategoria/${categoria.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button
+                      variant="contained"
+                      className="marginLeft"
+                      size="small"
+                      color="primary"
+                    >
+                      Atualizar
+                    </Button>
+                  </Box>
+                </Link>
 
-                <Typography variant="h5" component="h2">
-                 { categoria.descricao }
-                </Typography>
-
-              </CardContent>
-
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5} >
-
-                  <Link to={`/formularioCategoria/${ categoria.id }`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        Atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-
-                  <Link to={`/deletarCategoria/${ categoria.id }`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        Deletar
-                      </Button>
-                    </Box>
-                  </Link>
-
-                </Box>
-              </CardActions>
-
-            </Card>
-          </Box>
-          ))
-          }
-        </>
-    )
+                <Link
+                  to={`/deletarCategoria/${categoria.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" size="small" color="secondary">
+                      Deletar
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+            </CardActions>
+          </Card>
+        </Box>
+      ))}
+    </>
+  );
 }
 
 export default ListaCategoria;
