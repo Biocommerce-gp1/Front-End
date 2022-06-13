@@ -85,9 +85,9 @@ function Login() {
             <Box
               className="card"
               width={340}
-              height="50vh"
-              borderRadius={5}
-              marginTop={12}
+              height="20vh"
+              borderRadius={70}
+              marginTop={7}
               display="flex"
               justifyContent="center"
               alignItems="center"
