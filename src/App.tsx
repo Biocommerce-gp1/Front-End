@@ -15,12 +15,6 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import ListaProduto from './componentes/produto/listaProduto/ListaProduto';
 import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto';
-<<<<<<< HEAD
-import CadastroAdm from './pages/cadastroAdm/CadastroAdm';
-=======
-import CadastroProduto from './componentes/produto/cadastroProduto/CadastroProduto';
-
->>>>>>> f8af7991ca2923e7fa17b3219d54af2d5bea4fc3
 
 function App() {
   return (
@@ -38,15 +32,9 @@ function App() {
           <Route path="/formularioCategoria" element={<CadastroCategoria />} />
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-          <Route path='/admin' element={<CadastroAdm />} />
           <Route path="/produto" element={<ListaProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-<<<<<<< HEAD
           <Route path="/adm" element={<CadastroAdm />} />
-=======
-          <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
-          <Route path="/formularioProduto" element={<CadastroProduto />} />
->>>>>>> f8af7991ca2923e7fa17b3219d54af2d5bea4fc3
 
         </Routes>
       </div>

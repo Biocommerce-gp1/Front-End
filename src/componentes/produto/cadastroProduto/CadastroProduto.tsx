@@ -145,7 +145,6 @@ function CadastroProduto() {
                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
                 <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="Foto" name="foto" variant="outlined" margin="normal" fullWidth />
                 <TextField value={produto.desconto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="desconto" label="Desconto" name="desconto" variant="outlined" margin="normal" fullWidth />
-
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
