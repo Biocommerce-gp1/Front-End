@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import TabProduto from '../../componentes/produto/tabProduto/TabProduto';
 function Home() {
 
   const navigate = useNavigate()
@@ -69,6 +70,9 @@ function Home() {
         </Box>
       </Link>
 </Box>   
+<Box>
+  {TabProduto}
+</Box>
  </>
   )
 }

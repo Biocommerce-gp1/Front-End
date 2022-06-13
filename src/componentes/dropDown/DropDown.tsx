@@ -4,11 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-<<<<<<< HEAD
-import { FormHelperText } from '@material-ui/core';
-=======
 import { FormHelperText } from '@material-ui/core'
->>>>>>> f8af7991ca2923e7fa17b3219d54af2d5bea4fc3
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
