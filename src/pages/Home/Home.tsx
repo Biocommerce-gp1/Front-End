@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import TabProduto from '../../componentes/produto/tabProduto/TabProduto';
 function Home() {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   // const token = useSelector<TokenState, TokenState["tokens"]>(
   //   (state) => state.tokens
   // );
