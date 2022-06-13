@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { Link, useNavigate } from 'react-router-dom';
-import Categoria from '../../../models/Categoria';
-import { busca } from '../../../services/Service';
-import './ListaCategoria.css';
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { toast } from 'react-toastify';
+import React, { useState, useEffect } from "react";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
+import { Link, useNavigate } from "react-router-dom";
+import Categoria from "../../../models/Categoria";
+import { busca } from "../../../services/Service";
+import "./ListaCategoria.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function ListaCategoria() {
   let navigate = useNavigate();
@@ -16,9 +23,10 @@ function ListaCategoria() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
+
   useEffect(() => {
     if (token === "") {
-      toast.error("Você precisa estar logado", {
+      toast.error("VocÃª precisa estar logado", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -46,49 +54,56 @@ function ListaCategoria() {
 
   return (
     <>
-     {
-        categorias.map(categoria => (
+      {categorias.map((categoria) => (
+        <Box m={2}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography color="textSecondary" gutterBottom>
+                Categoria
+              </Typography>
 
-          <Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
+              <Typography variant="h5" component="h2">
+                {categoria.secao}
+              </Typography>
 
-                <Typography color="textSecondary" gutterBottom>
-                  {categoria.secao}
-                </Typography>
+              <Typography variant="h5" component="h2">
+                {categoria.descricao}
+              </Typography>
+            </CardContent>
 
-                <Typography variant="h5" component="h2">
-                  {categoria.descricao}
-                </Typography>
+            <CardActions>
+              <Box display="flex" justifyContent="center" mb={1.5}>
+                <Link
+                  to={`/formularioTema/${categoria.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button
+                      variant="contained"
+                      className="marginLeft"
+                      size="small"
+                      color="primary"
+                    >
+                      Atualizar
+                    </Button>
+                  </Box>
+                </Link>
 
-              </CardContent>
-
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5} >
-
-                  <Link to={/formularioCategoria/${categoria.id}} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        Atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-
-                  <Link to={/deletarCategoria/${categoria.id}} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        Deletar
-                      </Button>
-                    </Box>
-                  </Link>
-
-                </Box>
-              </CardActions>
-
-            </Card>
-          </Box>
-        ))
-      }
+                <Link
+                  to={`/deletarTema/${categoria.id}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" size="small" color="secondary">
+                      Deletar
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+            </CardActions>
+          </Card>
+        </Box>
+      ))}
     </>
   );
 }

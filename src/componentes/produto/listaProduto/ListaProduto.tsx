@@ -75,7 +75,7 @@ function ListaProduto() {
                 {produto.desconto}
               </Typography>
               
-              <img src={produto.foto} alt="" />
+              <img src={produto.foto} alt="Fotos dos produtos" className="fotos-produtos" />
             </CardContent>
 
             <CardActions>
