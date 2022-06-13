@@ -9,25 +9,25 @@ import TabProduto from '../../componentes/produto/tabProduto/TabProduto';
 function Home() {
 
   const navigate = useNavigate()
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  // const token = useSelector<TokenState, TokenState["tokens"]>(
+  //   (state) => state.tokens
+  // );
 
-  useEffect(() => {
-    if (token === "") {
-      toast.error("Você precisa estar logado", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-      })
-      navigate('/login')
-    }
-  }, [token])
+  // useEffect(() => {
+  //   if (token === "") {
+  //     toast.error("Você precisa estar logado", {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: false,
+  //       draggable: false,
+  //       theme: "colored",
+  //       progress: undefined,
+  //     })
+  //     navigate('/login')
+  //   }
+  // }, [token])
 
 
   return (

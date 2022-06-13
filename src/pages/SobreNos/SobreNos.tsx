@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Typography, Box, Grid, Button } from '@material-ui/core';
 import GithubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import GitHub from '@material-ui/icons/GitHub';
 import './SobreNos.css';
+import { useNavigate } from 'react-router-dom';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function SobreNos() {
+
+  const navigate = useNavigate()
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  useEffect(() => {
+    if (token === "") {
+      toast.error("Você precisa estar logado", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      })
+      navigate('/login')
+    }
+  }, [token])
+
   return (
     <>
       <Grid className='backgroundSobre' container direction="row" justifyContent="center" alignItems="center">
