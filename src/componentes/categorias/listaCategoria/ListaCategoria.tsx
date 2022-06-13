@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
-import Categoria from "../../../models/Categoria";
-import { busca } from "../../../services/Service";
-import "./ListaCategoria.css";
-import { toast } from "react-toastify";
-import "./ListaCategoria.css";
-import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import React, { useState, useEffect } from 'react';
+import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Link, useNavigate } from 'react-router-dom';
+import Categoria from '../../../models/Categoria';
+import { busca } from '../../../services/Service';
+import './ListaCategoria.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaCategoria() {
   let navigate = useNavigate();
@@ -54,68 +46,49 @@ function ListaCategoria() {
 
   return (
     <>
-      {categorias.map((categoria) => (
-        <Box m={2}>
-          <Card variant="outlined">
-            <CardContent>
+     {
+        categorias.map(categoria => (
+
+          <Box m={2} >
+            <Card variant="outlined">
+              <CardContent>
+
+                <Typography color="textSecondary" gutterBottom>
+                  {categoria.secao}
+                </Typography>
+
+                <Typography variant="h5" component="h2">
+                  {categoria.descricao}
+                </Typography>
+
+              </CardContent>
+
               <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
-                  <Link
-                    to={`/formularioCategoria/${categoria.id}`}
-                    className="text-decorator-none"
-                  >
+                <Box display="flex" justifyContent="center" mb={1.5} >
+
+                  <Link to={/formularioCategoria/${categoria.id}} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button
-                        variant="contained"
-                        className="marginLeft"
-                        size="small"
-                        color="primary"
-                      >
+                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         Atualizar
                       </Button>
                     </Box>
                   </Link>
 
-                  <Typography variant="h5" component="h2">
-                    {categoria.descricao}
-                  </Typography>
+                  <Link to={/deletarCategoria/${categoria.id}} className="text-decorator-none">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        Deletar
+                      </Button>
+                    </Box>
+                  </Link>
+
                 </Box>
               </CardActions>
-            </CardContent>
 
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/formularioCategoria/${categoria.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                      Atualizar
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link
-                  to={`/deletarCategoria/${categoria.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      Deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
-          </Card>
-        </Box>
-      ))}
+            </Card>
+          </Box>
+        ))
+      }
     </>
   );
 }
