@@ -13,7 +13,7 @@ function Login() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [token, setToken] = useState("");
-  const [adm, setAdm] = useLocalStorage("adm")
+  // const [adm, setAdm] = useLocalStorage("adm")
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",

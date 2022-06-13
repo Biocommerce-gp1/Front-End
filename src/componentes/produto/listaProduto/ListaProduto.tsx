@@ -66,6 +66,15 @@ function ListaProduto() {
               <Typography variant="body2" component="p">
                 {produto.categoria?.secao}
               </Typography>
+
+              <Typography variant="body2" component="p">
+                {produto.preco}
+              </Typography>
+
+              <Typography variant="body2" component="p">
+                {produto.desconto}
+              </Typography>
+              
               <img src={produto.foto} alt="" />
             </CardContent>
 
