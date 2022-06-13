@@ -5,7 +5,11 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import { styled, alpha } from "@mui/material/styles";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -50,6 +54,27 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navbar() {
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function goLogout() {
+    dispatch(addToken(""));
+    toast.info("Usuário deslogado", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
+    navigate("/login");
+  }
+
   return (
     <>
       <AppBar position="static">
@@ -80,18 +105,18 @@ function Navbar() {
             </Box>
           </Link>
           <Link to="/produto" className="text-decoration">
-          <Box mx={1} className="cursor">
-            <Typography variant="h6" color="inherit">
-              Produtos
-            </Typography>
-          </Box>
+            <Box mx={1} className="cursor">
+              <Typography variant="h6" color="inherit">
+                Produtos
+              </Typography>
+            </Box>
           </Link>
           <Link to="/categoria" className="text-decoration">
-          <Box mx={1} className="cursor">
-            <Typography variant="h6" color="inherit">
-              Categorias
-            </Typography>
-          </Box>
+            <Box mx={1} className="cursor">
+              <Typography variant="h6" color="inherit">
+                Categorias
+              </Typography>
+            </Box>
           </Link>
 
           <Search>
@@ -103,13 +128,12 @@ function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-          <Link to="/login" className="text-decoration2">
-            <Box marginLeft={65} className="cursor">
-              <Typography variant="h6" color="inherit">
-                Logout
-              </Typography>
-            </Box>
-          </Link>
+
+          <Box marginLeft={65} className="cursor">
+            <Typography variant="h6" color="inherit" onClick={goLogout}>
+              Logout
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
     </>
