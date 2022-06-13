@@ -1,0 +1,11 @@
+.cards{
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    
+}
+/* .cards > div {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  } */

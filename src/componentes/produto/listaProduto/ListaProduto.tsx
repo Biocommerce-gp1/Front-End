@@ -13,32 +13,28 @@ function ListaProduto() {
 
   const [produtos, setProdutos] = useState<Produto[]>([])
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  // const token = useSelector<TokenState, TokenState["tokens"]>(
+  //   (state) => state.tokens
+  // );
 
-  useEffect(() => {
-    if (token === "") {
-      toast.error('Você precisa estar logado', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-      });
-      navigate("/login");
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token === "") {
+  //     toast.error('Você precisa estar logado', {
+  //       position: "top-right",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: false,
+  //       draggable: false,
+  //       theme: "colored",
+  //       progress: undefined,
+  //     });
+  //     navigate("/login");
+  //   }
+  // }, [token]);
 
   async function getProduto() {
-    await busca("/produto", setProdutos, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    await busca("/produto", setProdutos, {});
   }
 
   useEffect(() => {
@@ -46,15 +42,12 @@ function ListaProduto() {
   }, [produtos.length]);
 
   return (
-    <>
+    <Box display="flex" >
       {produtos.map((produto) => (
-        <Box m={2}>
-          <Card variant="outlined">
+        <Box m={12}>
+          <Card variant="outlined" >
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Produto
-              </Typography>
-
+              
               <Typography variant="h5" component="h2">
                 {produto.nome}
               </Typography>
@@ -66,16 +59,9 @@ function ListaProduto() {
               <Typography variant="body2" component="p">
                 {produto.categoria?.secao}
               </Typography>
-
-              <Typography variant="body2" component="p">
-                {produto.preco}
-              </Typography>
-
-              <Typography variant="body2" component="p">
-                {produto.desconto}
-              </Typography>
               
               <img src={produto.foto} alt="" />
+
             </CardContent>
 
             <CardActions>
@@ -111,7 +97,7 @@ function ListaProduto() {
           </Card>
         </Box>
       ))}
-    </>
+    </Box>
   );
 }
 
