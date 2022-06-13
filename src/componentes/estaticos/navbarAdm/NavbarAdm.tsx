@@ -134,4 +134,8 @@ function NavbarAdm() {
     )
 }
 
+<<<<<<< HEAD
 export default NavbarAdm
+=======
+export default NavbarAdm;
+>>>>>>> f8af7991ca2923e7fa17b3219d54af2d5bea4fc3

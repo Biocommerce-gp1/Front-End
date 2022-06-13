@@ -1,23 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+
 
 import Categoria from '../../../models/Categoria';
 import { busca } from '../../../services/Service';
 
 import './ListaCategoria.css';
-function ListaCategoria(){
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
+function ListaCategoria() {
 
-    let navigate = useNavigate()
+  let navigate = useNavigate()
 
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
-  const [token, setToken] = useLocalStorage('token')
-
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
       navigate("/login")
     }
   }, [token])
@@ -34,12 +47,12 @@ function ListaCategoria(){
     getCategoria()
   }, [categorias.length])
 
-    return(
-        <>
-        {
-            categorias.map(categoria =>(
+  return (
+    <>
+      {
+        categorias.map(categoria => (
 
-<Box m={2} >
+          <Box m={2} >
             <Card variant="outlined">
               <CardContent>
 
@@ -48,7 +61,7 @@ function ListaCategoria(){
                 </Typography>
 
                 <Typography variant="h5" component="h2">
-                 { categoria.descricao }
+                  {categoria.descricao}
                 </Typography>
 
               </CardContent>
@@ -56,7 +69,7 @@ function ListaCategoria(){
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5} >
 
-                  <Link to={`/formularioCategoria/${ categoria.id }`} className="text-decorator-none">
+                  <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         Atualizar
@@ -64,7 +77,7 @@ function ListaCategoria(){
                     </Box>
                   </Link>
 
-                  <Link to={`/deletarCategoria/${ categoria.id }`} className="text-decorator-none">
+                  <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         Deletar
@@ -77,10 +90,10 @@ function ListaCategoria(){
 
             </Card>
           </Box>
-          ))
-          }
-        </>
-    )
+        ))
+      }
+    </>
+  )
 }
 
 export default ListaCategoria;

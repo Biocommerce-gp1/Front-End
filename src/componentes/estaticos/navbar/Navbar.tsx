@@ -93,6 +93,7 @@ function Navbar() {
             </Typography>
           </Box>
           </Link>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -103,7 +104,7 @@ function Navbar() {
             />
           </Search>
           <Link to="/login" className="text-decoration2">
-            <Box marginLeft={80} className="cursor">
+            <Box marginLeft={65} className="cursor">
               <Typography variant="h6" color="inherit">
                 Logout
               </Typography>
