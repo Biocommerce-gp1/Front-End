@@ -1,5 +1,17 @@
-.img {
+/* .img {
   background-image: url(https://i.imgur.com/lbVj3x3.jpg);
   background-repeat: no-repeat;
   background-size: 100vw 90vh;
+} */
+
+.logo-home {
+  
+  height: 300px;
+  width: 300px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  position: relative;
+  top: -50px;
 }

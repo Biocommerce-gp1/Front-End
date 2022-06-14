@@ -63,7 +63,7 @@ function CadastroUsuario() {
       } catch (error) {
         console.log(`Error: ${error}`);
 
-        alert("Tá dando erro no cod");
+       
       }
     } else {
       toast.error("Dados do usuário inconsistentes. Erro ao logar", {
@@ -102,7 +102,7 @@ function CadastroUsuario() {
               align="center"
               className="textos2"
             >
-              Cadastrar
+              Cadastro:
             </Typography>
            
             <TextField
@@ -137,6 +137,7 @@ function CadastroUsuario() {
               name="senha"
               margin="normal"
               type="password"
+              placeholder="mínimo 8 caracteres" 
               required
               fullWidth
               className="formulario"
@@ -152,6 +153,7 @@ function CadastroUsuario() {
               name="confirmarSenha"
               margin="normal"
               type="password"
+             
               required
               fullWidth
               className="formulario"

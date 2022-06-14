@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
+import { ExitToApp } from "@material-ui/icons";
 
 function Navbar() {
 
@@ -101,7 +102,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       theme: "colored",
       progress: undefined,
     });
-    navigate("/login");
+    navigate("/home");
   }
 
   async function findById(id: string) {
@@ -128,14 +129,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     navbar = <AppBar position="static">
     <Toolbar className="fundo" variant="dense">
       <Link to="/home">
-        <Box>
-          <img
-            src="https://i.imgur.com/gCESJH1.png"
-            alt="Logo Biocommerce"
-            height={80}
-            width={80}
-          />
-        </Box>
+        
       </Link>
       <Link to="/home" className="text-decoration">
         <Box className="cursor">
@@ -179,9 +173,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
       <Box marginLeft={65} className="cursor">
         <Typography variant="h6" color="inherit" onClick={goLogout}>
-          Logout
+          Sair
         </Typography>
       </Box>
+      <Box mx={1} className='cursor' onClick={goLogout} marginRight={0}>
+         <ExitToApp />
+        </Box>
     </Toolbar>
   </AppBar>
   }
