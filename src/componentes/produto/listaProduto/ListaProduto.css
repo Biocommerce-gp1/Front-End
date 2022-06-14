@@ -1,11 +1,5 @@
-.cards{
-    display: flex;
-    margin: 10px;
-    padding: 20px;
-    
+.fotos-produtos{
+height: 150px;
+right: 150px;
+
 }
-/* .cards > div {
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-  } */
