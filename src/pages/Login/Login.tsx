@@ -1,5 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Grid, Paper, Box, Typography, TextField, Button } from "@material-ui/core";
+import {
+  Grid,
+  Paper,
+  Box,
+  Typography,
+  TextField,
+  Button,
+} from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import "./Login.css";
@@ -32,16 +39,16 @@ function Login() {
 
   useEffect(() => {
     if (token != "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
 
   useEffect(() => {
-    if (userLogin.tipo === 'administrador') {
-        navigate('/login')
+    if (userLogin.tipo === "administrador") {
+      navigate("/login");
     }
-}, [userLogin])
+  }, [userLogin]);
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -135,12 +142,7 @@ function Login() {
                   </Box>
 
                   <Box textAlign="center">
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      className="botao"
-                      type="submit"
-                    >
+                    <Button variant="contained" className="botao" type="submit">
                       Login
                     </Button>
                   </Box>

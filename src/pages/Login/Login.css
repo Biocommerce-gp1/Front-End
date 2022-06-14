@@ -1,23 +1,25 @@
 .background
 {
-    background-image: url(https://i.imgur.com/sOd5pY4.jpg) ;
+    background-image: url(https://i.imgur.com/rgjwuog.png) ;
+   
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100vw;
+    /* width: 100vw; */
     height:100vh;
 }
 
 .card
 {
-    background-color: #84ccafce;
+    background-color: #b7d7cad6;
+    /* background-color: #0e3f2bd6; */
     width: 450px !important;
     height: 500px !important;
 }
 
 .form-title
 {
-    color: #1F2322!important;
+    color: #0E3F2B!important;
     font-weight:bold!important;
 }
 
@@ -63,11 +65,11 @@
 
 .cadastrar
 {
-    color: #3C4541!important;
+    color: #0E3F2B!important;
 }
 .cadastrar-conta
 {
-    color: #3C4541!important;
+    color: #111213!important;
     font-weight: bold!important;
     
 }

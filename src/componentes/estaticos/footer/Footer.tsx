@@ -28,7 +28,8 @@ function Footer() {
                 align="center"
                 gutterBottom
                 >
-                  Siga-nos para ter acesso ao nosso portfólio: {" "}
+                  Produtos 100% sustentáveis {" "}
+                  <img src="https://i.imgur.com/h27vzMH.png" alt="" height={40} width={40} />
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center" justifyContent="center">

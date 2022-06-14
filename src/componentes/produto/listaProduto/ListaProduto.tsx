@@ -42,7 +42,7 @@ function ListaProduto() {
   }, [produtos.length]);
 
   return (
-    <Box display="flex" >
+    <Box className="fotos-fundos" display="flex" >
       {produtos.map((produto) => (
         <Box m={12}>
           <Card variant="outlined" >

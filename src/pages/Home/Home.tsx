@@ -32,6 +32,11 @@ function Home() {
 
   return (
     <>
+
+<Box>
+  {TabProduto}
+
+</Box>
 <Box>  
      <Box padding={10}>
         <Link
@@ -70,9 +75,6 @@ function Home() {
         </Box>
       </Link>
 </Box>   
-<Box>
-  {TabProduto}
-</Box>
  </>
   )
 }
