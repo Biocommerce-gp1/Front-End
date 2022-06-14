@@ -42,9 +42,10 @@ function ListaProduto() {
   }, [produtos.length]);
 
   return (
-    <Box className="fotos-fundos" display="flex" >
+    
+    <Box display="flex" >
       {produtos.map((produto) => (
-        <Box m={12}>
+        <Box  m={12}>
           <Card variant="outlined" >
             <CardContent>
               
@@ -59,8 +60,9 @@ function ListaProduto() {
               <Typography variant="body2" component="p">
                 {produto.categoria?.secao}
               </Typography>
-              
-              <img src={produto.foto} alt="" />
+             
+              <img src={produto.foto} alt="" height={260} width={260} />
+             
 
             </CardContent>
 
