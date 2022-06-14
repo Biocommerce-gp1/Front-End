@@ -2,8 +2,7 @@ import { Box, Button, Grid, MenuItem, TextField, Typography } from '@material-ui
 import { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import User from '../../models/User'
-import { cadastroUsuario, post } from '../../services/Service'
-import DropDown from '../../componentes/dropDown/DropDown';
+import { cadastroUsuario, post } from '../../services/Service';
 
 function CadastroAdm() {
     let navigate = useNavigate()
@@ -69,8 +68,8 @@ function CadastroAdm() {
     }
     return (
         <>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='background'>
-                <Grid item xs={6} className='imagem2'></Grid>
+            <Grid container direction='row' justifyContent='center' alignItems='center'>
+                <Grid item xs={6}></Grid>
                 <Grid item xs={6} alignItems='center'>
                     <Box paddingX={10}>
                         <form onSubmit={cadastrar}>
@@ -85,20 +84,21 @@ function CadastroAdm() {
                             <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' name='confirmarSenha' margin='normal'
                                 type='password' required fullWidth />
 
-                                <DropDown />
+                            <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo de usuário' name='tipo' margin='normal' type='tipo' required fullWidth />
 
-                                <Box marginTop={2} textAlign='center'>
-                                    <Link to='/login' className='text-decoration'>
-                                        <Button variant='contained' color='secondary' className='button'>
-                                            Cancelar
-                                        </Button>
-                                    </Link>
 
-                                    <Button type='submit' variant='contained' color='primary' className='button'>
-                                        Cadastrar
+                            <Box marginTop={2} textAlign='center'>
+                                <Link to='/login' className='text-decoration'>
+                                    <Button variant='contained' color='secondary' className='button'>
+                                        Cancelar
                                     </Button>
+                                </Link>
 
-                                </Box>
+                                <Button type='submit' variant='contained' color='primary' className='button'>
+                                    Cadastrar
+                                </Button>
+
+                            </Box>
                         </form>
                     </Box>
                 </Grid>
