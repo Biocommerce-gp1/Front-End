@@ -18,6 +18,7 @@ import { busca, buscaId, post, put } from "../../../services/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import ListaProduto from "../listaProduto/ListaProduto";
 
 function CadastroProduto() {
   let navigate = useNavigate();
@@ -237,6 +238,10 @@ function CadastroProduto() {
           </Button>
         </FormControl>
       </form>
+
+      <Container>
+        <ListaProduto />
+      </Container>
     </Container>
   );
 }

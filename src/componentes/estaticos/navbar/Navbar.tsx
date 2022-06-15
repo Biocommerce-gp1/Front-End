@@ -14,6 +14,7 @@ import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
 import { ExitToApp } from "@material-ui/icons";
+import NavbarLogado from "./NavbarLogado";
 import NavBarDeslogado from "../navbarDeslogado/NavBarDeslogado";
 
 function Navbar() {
@@ -77,80 +78,11 @@ function Navbar() {
   }, [id]);
 
   if (tipo === "adm") navbar = <NavbarAdm />;
-  else if (token !== "") {
-    navbar = (
-      <AppBar position="static">
-        <Toolbar className="fundo" variant="dense">
-          <Link to="/home"></Link>
 
-
-          <Box className="cursor2" >
-            <Typography color="inherit">
-              seja bem vinde, faça seu
-            </Typography>
-          </Box>
-
-
-          <Link to="/login" className="text-decoration">
-            <Box mx={0.5} className="cursor">
-              <Typography color="inherit">
-                Login
-              </Typography>
-            </Box>
-          </Link>
-
-          <Box className="cursor2" >
-            <Typography color="inherit">
-              ou
-            </Typography>
-          </Box>
-
-          <Link to="/cadastro" className="text-decoration">
-            <Box mx={0.5} className="cursor">
-              <Typography color="inherit">
-                Cadastre-se
-              </Typography>
-            </Box>
-          </Link>
-
-          <Link to="/home" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
-              <Typography color="inherit">
-                Home
-              </Typography>
-            </Box>
-          </Link>
-
-
-          <Link to="/produto" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
-              <Typography color="inherit">
-                Produtos
-              </Typography>
-            </Box>
-          </Link>
-
-          <Link to="/sobre-nos" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
-              <Typography color="inherit">
-                Sobre nós
-              </Typography>
-            </Box>
-          </Link>
-
-
-          <Box marginLeft={60} className="cursor">
-            <Typography variant="h6" color="inherit" onClick={goLogout}>
-              Sair
-            </Typography>
-          </Box>
-          <Box mx={1} className="cursor2" onClick={goLogout} marginRight={0}>
-            <ExitToApp />
-          </Box>
-        </Toolbar>
-      </AppBar>
-    );
-  } else {
+  else if (token !== ""){
+    navbar = <NavbarLogado />
+  }
+else {
 
       navbar = <NavBarDeslogado />
 
