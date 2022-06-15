@@ -14,9 +14,10 @@ import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
 import { ExitToApp } from "@material-ui/icons";
+import NavBarDeslogado from "../navbarDeslogado/NavBarDeslogado";
 
 function Navbar() {
-  
+
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
@@ -76,69 +77,69 @@ function Navbar() {
   }, [id]);
 
   if (tipo === "adm") navbar = <NavbarAdm />;
-  else {
+  else if (token !== "") {
     navbar = (
       <AppBar position="static">
         <Toolbar className="fundo" variant="dense">
           <Link to="/home"></Link>
 
-          
-        <Box  className="cursor2" >
-          <Typography color="inherit">
-           seja vem vinde, faça seu 
-          </Typography>
-        </Box>
-        
+
+          <Box className="cursor2" >
+            <Typography color="inherit">
+              seja bem vinde, faça seu
+            </Typography>
+          </Box>
+
 
           <Link to="/login" className="text-decoration">
-        <Box  mx={0.5} className="cursor">
-          <Typography color="inherit">
-           Login
-          </Typography>
-        </Box>
-        </Link>
+            <Box mx={0.5} className="cursor">
+              <Typography color="inherit">
+                Login
+              </Typography>
+            </Box>
+          </Link>
 
-        <Box  className="cursor2" >
-          <Typography color="inherit">
-          ou
-          </Typography>
-        </Box>
+          <Box className="cursor2" >
+            <Typography color="inherit">
+              ou
+            </Typography>
+          </Box>
 
-        <Link to="/cadastro" className="text-decoration">
-        <Box  mx={0.5} className="cursor">
-          <Typography color="inherit">
-           Cadastre-se
-          </Typography>
-        </Box>
-        </Link>
+          <Link to="/cadastro" className="text-decoration">
+            <Box mx={0.5} className="cursor">
+              <Typography color="inherit">
+                Cadastre-se
+              </Typography>
+            </Box>
+          </Link>
 
           <Link to="/home" className="text-decoration">
             <Box marginLeft={8} className="cursor">
-              <Typography  color="inherit">
+              <Typography color="inherit">
                 Home
               </Typography>
             </Box>
           </Link>
 
-         
+
           <Link to="/produto" className="text-decoration">
             <Box marginLeft={8} className="cursor">
-              <Typography  color="inherit">
+              <Typography color="inherit">
                 Produtos
               </Typography>
             </Box>
           </Link>
-          
+
           <Link to="/sobre-nos" className="text-decoration">
-            <Box  marginLeft={8} className="cursor">
-              <Typography  color="inherit">
+            <Box marginLeft={8} className="cursor">
+              <Typography color="inherit">
                 Sobre nós
               </Typography>
             </Box>
           </Link>
-         
 
-          <Box  marginLeft={60} className="cursor">
+
+          <Box marginLeft={60} className="cursor">
             <Typography variant="h6" color="inherit" onClick={goLogout}>
               Sair
             </Typography>
@@ -149,9 +150,14 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     );
+  } else {
+
+      navbar = <NavBarDeslogado />
+
   }
 
-  return <>{navbar}</>;
+  return ({ navbar }
+  )
 }
 
 export default Navbar;

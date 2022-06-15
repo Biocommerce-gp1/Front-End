@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Box, Button, Card, CardActions, CardContent, Typography, Grid } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import Produto from "../../../models/Produto";
 import { busca } from "../../../services/Service";
@@ -43,7 +43,7 @@ function ListaProduto() {
 
   return (
     
-    <Box display="flex" >
+    <Grid container >
       {produtos.map((produto) => (
         <Box  m={2}>
           <Card variant="outlined"  >
@@ -99,7 +99,7 @@ function ListaProduto() {
           </Card>
         </Box>
       ))}
-    </Box>
+    </Grid>
   );
 }
 

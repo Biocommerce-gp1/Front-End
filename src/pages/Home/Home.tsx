@@ -7,14 +7,16 @@ import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import TabProduto from "../../componentes/produto/tabProduto/TabProduto";
 function Home() {
- 
+
   return (
     <>
-    <Link to="/home">
-      <Box className="logo-home">
-        <img src="https://i.imgur.com/iNN3fVN.png" alt="LogoBiocommerce"  />
+      <Box margin={5} display="flex" justifyContent="center">
+        <Link to="/home">
+          {/* <Box className="logo-home"> */}
+            <img width="250px" src="https://i.imgur.com/iNN3fVN.png" alt="LogoBiocommerce" />
+          {/* </Box> */}
+        </Link>
       </Box>
-      </Link>
 
       <Box>{TabProduto}</Box>
       <Box>

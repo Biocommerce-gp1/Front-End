@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './componentes/estaticos/navbar/Navbar'
+import Navbar from './componentes/estaticos/navbar/Navbar';
 import Footer from './componentes/estaticos/footer/Footer';
 import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
