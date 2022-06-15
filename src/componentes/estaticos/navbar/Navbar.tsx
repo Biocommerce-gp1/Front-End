@@ -14,6 +14,7 @@ import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
 import { ExitToApp } from "@material-ui/icons";
+import NavbarLogado from "./NavbarLogado";
 
 function Navbar() {
   
@@ -76,6 +77,10 @@ function Navbar() {
   }, [id]);
 
   if (tipo === "adm") navbar = <NavbarAdm />;
+
+  else if (token !== ""){
+    navbar = <NavbarLogado />
+  }
   else {
     navbar = (
       <AppBar position="static">
@@ -137,15 +142,6 @@ function Navbar() {
             </Box>
           </Link>
          
-
-          <Box  marginLeft={60} className="cursor">
-            <Typography variant="h6" color="inherit" onClick={goLogout}>
-              Sair
-            </Typography>
-          </Box>
-          <Box mx={1} className="cursor2" onClick={goLogout} marginRight={0}>
-            <ExitToApp />
-          </Box>
         </Toolbar>
       </AppBar>
     );
