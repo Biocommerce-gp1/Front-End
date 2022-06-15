@@ -1,11 +1,17 @@
-.cards{
-    display: flex;
-    margin: 10px;
-    padding: 20px;
+.fotos-produtos{
+height: 10px;
+right: 10px;
+
+}
+
+.zoo 
+{
+    height: 200px;
+    width: 200px;
+   
     
 }
-/* .cards > div {
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-  } */
+
+
+
+

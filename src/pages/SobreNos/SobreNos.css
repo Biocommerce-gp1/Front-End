@@ -1,39 +1,38 @@
-.backgroundSobre {
-  background-color: #c3e0da !important;
-  height: 100vh;
-}
-
-.devs {
-  width: 100px;
-  height: 100px;
-  border-radius: 150px;
-}
-
-.centro {
+#sobre {
   display: flex;
+  flex-direction: column;
+
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  /* padding: 20px; */
-  margin: 50px !important;
+
+  width: 98%;
+  padding: 20px 10px;
 }
 
-.centro div {
-  margin: 10px;
-}
-
-.espaco {
-  margin-bottom: -5px;
-}
-
-.centro footer {
-  margin: 10px;
-}
-
-.integrantes {
+#sobre section {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 
-.icon a {
-  color: rgb(46, 46, 46) !important;
+#sobre section img {
+  width: 400px;
+  height: auto;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+#sobre section div {
+  font-size: 20px;
+  margin: 2px 5px;
+}
+
+#sobre section div h2 {
+  font-weight: bold;
+  color: #5b8866;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font: icon;
 }

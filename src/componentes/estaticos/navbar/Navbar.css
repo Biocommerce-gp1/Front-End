@@ -9,9 +9,16 @@
 
 .cursor{
     cursor: pointer;
+    
 }
 
 .text-decoration2{
     text-decoration: none;
     color: #84CCAF75;
+}
+
+.cursor2{
+    cursor: pointer;
+    text-decoration: none;
+    color: #8FBD4F;
 }

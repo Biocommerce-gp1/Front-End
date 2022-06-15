@@ -1,5 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Grid, Paper, Box, Typography, TextField, Button } from "@material-ui/core";
+import {
+  Grid,
+  Paper,
+  Box,
+  Typography,
+  TextField,
+  Button,
+} from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import "./Login.css";
@@ -7,20 +14,28 @@ import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { AdminPanelSettingsTwoTone } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+import { addId, addTipo, addToken } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 
 function Login() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [token, setToken] = useState("");
-  // const [adm, setAdm] = useLocalStorage("adm")
+
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
     senha: "",
     tipo: "",
     token: "",
+  });
+
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+    usuario: "",
+    senha: "",
+    token: "",
+    tipo: "",
   });
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
@@ -32,22 +47,30 @@ function Login() {
 
   useEffect(() => {
     if (token != "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
 
   useEffect(() => {
-    if (userLogin.tipo === 'administrador') {
-        navigate('/login')
+    if (respUserLogin.token !== "") {
+      // Verifica os dados pelo console (Opcional)
+      console.log("Token: " + respUserLogin.token);
+      console.log("ID: " + respUserLogin.id);
+
+      // Guarda as informações dentro do Redux (Store)
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString())); // Faz uma conversão de Number para String
+      dispatch(addTipo(respUserLogin.tipo));
+      navigate("/home");
     }
-}, [userLogin])
+  }, [respUserLogin.token]);
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken);
+      await login(`/usuarios/logar`, userLogin, setRespUserLogin);
       toast.success("Usuário logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
@@ -85,9 +108,9 @@ function Login() {
             <Box
               className="card"
               width={340}
-              height="50vh"
-              borderRadius={5}
-              marginTop={12}
+              height="20vh"
+              borderRadius={70}
+              marginTop={7}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -141,27 +164,11 @@ function Login() {
                       className="botao"
                       type="submit"
                     >
-                      Login
+                      Entrar
                     </Button>
                   </Box>
                 </form>
-                <Box display="flex" justifyContent="center" marginTop={2}>
-                  <Box marginRight={1} className="cadastrar">
-                    <Typography variant="subtitle1" gutterBottom align="center">
-                      Não tem uma conta?
-                    </Typography>
-                  </Box>
-                  <Link className="text-decoration" to="/cadastro">
-                    <Typography
-                      variant="subtitle1"
-                      gutterBottom
-                      align="center"
-                      className="cadastrar-conta"
-                    >
-                      Cadastre-se
-                    </Typography>
-                  </Link>
-                </Box>
+                <Box display="flex" justifyContent="center" marginTop={2}></Box>
               </Box>
             </Box>
           </Box>
