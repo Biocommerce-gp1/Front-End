@@ -12,9 +12,8 @@
 .card
 {
     background-color: #b7d7cad6;
-    /* background-color: #0e3f2bd6; */
-    width: 450px !important;
-    height: 500px !important;
+    width: 400px !important;
+    height: 400px !important;
 }
 
 .form-title

@@ -161,13 +161,7 @@ function Navbar() {
             </Box>
           </Link>
 
-          <Link to="/sobre-nos" className="text-decoration">
-            <Box  marginLeft={8} className="cursor">
-              <Typography  color="inherit">
-                Sobre nós
-              </Typography>
-            </Box>
-          </Link>
+         
           <Link to="/produto" className="text-decoration">
             <Box marginLeft={8} className="cursor">
               <Typography  color="inherit">
@@ -175,13 +169,15 @@ function Navbar() {
               </Typography>
             </Box>
           </Link>
-          <Link to="/categoria" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
+          
+          <Link to="/sobre-nos" className="text-decoration">
+            <Box  marginLeft={8} className="cursor">
               <Typography  color="inherit">
-                Categorias
+                Sobre nós
               </Typography>
             </Box>
           </Link>
+         
 
           {/* <Search>
             <SearchIconWrapper>
@@ -193,7 +189,7 @@ function Navbar() {
             />
           </Search> */}
 
-          <Box  marginLeft={46} className="cursor">
+          <Box  marginLeft={60} className="cursor">
             <Typography variant="h6" color="inherit" onClick={goLogout}>
               Sair
             </Typography>

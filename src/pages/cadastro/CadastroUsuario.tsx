@@ -102,7 +102,7 @@ function CadastroUsuario() {
               align="center"
               className="textos2"
             >
-              Cadastro:
+              Cadastro
             </Typography>
            
             <TextField
