@@ -6,7 +6,6 @@ import './App.css';
 import SobreNos from './pages/SobreNos/SobreNos';
 import Home from './pages/Home/Home';
 import CadastroUsuario from './pages/cadastro/CadastroUsuario';
-import Login from './pages/login/Login';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
 import CadastroAdm from './pages/adm/CadastroAdm';
@@ -18,6 +17,7 @@ import DeletarProduto from './componentes/produto/deletarProduto/DeletarProduto'
 import CadastroProduto from './componentes/produto/cadastroProduto/CadastroProduto';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { Login } from '@mui/icons-material';
 
 function App() {
   return (
