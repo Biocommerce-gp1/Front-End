@@ -5,6 +5,7 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import { styled, alpha } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 function NavbarAdm() {
 
@@ -55,17 +56,8 @@ function NavbarAdm() {
         <>
             <AppBar position="static">
                 <Toolbar className="fundo" variant="dense">
-                    {/* <Link to="/home">
-                        <Box>
-                            <img
-                                src="https://i.imgur.com/gCESJH1.png"
-                                alt="Logo Biocommerce"
-                                height={80}
-                                width={80}
-                            />
-                        </Box>
-                    </Link> */}
-                    {/* <Link to="/home" className="text-decoration">
+
+                    <Link to="/home" className="text-decoration">
                         <Box className="cursor">
                             <Typography variant="h5" color="inherit">
                                 Home
@@ -73,32 +65,23 @@ function NavbarAdm() {
                         </Box>
                     </Link>
 
-                    <Link to="/sobre-nos" className="text-decoration">
-                        <Box mx={1} className="cursor">
-                            <Typography variant="h6" color="inherit">
-                                Sobre nós
-                            </Typography>
-                        </Box>
-                    </Link> */}
                     <Link to="/produto" className="text-decoration">
-                        <Box mx={1} className="cursor">
-                            <Typography variant="h6" color="inherit">
+                        <Box mx={1} className="cursor" marginLeft={5}>
+                            <Typography variant="button"color="inherit">
                                 Produtos
                             </Typography>
                         </Box>
                     </Link>
 
-                    <Link to="/categoria" className="text-decoration">
-                        <Box mx={1} className="cursor">
-                            <Typography variant="button" color="inherit">
-                                Cadastrar Produto
-                            </Typography>
+                    <Link to={`/formularioProduto`} className="text-decoration">
+                        <Box mx={1} className="cursor" marginRight={5}>
+                           <AddCircleOutlineIcon />
                         </Box>
                     </Link>
 
                     <Link to="/categoria" className="text-decoration">
-                        <Box mx={1} className="cursor">
-                            <Typography variant="h6" color="inherit">
+                        <Box mx={1} className="cursor" >
+                            <Typography variant="button" color="inherit">
                                 Categorias
                             </Typography>
                         </Box>
@@ -106,25 +89,12 @@ function NavbarAdm() {
 
                     <Link to={`/formularioCategoria`} className="text-decoration">
                         <Box mx={1} className="cursor">
-                            <Typography variant="button" color="inherit">
-                                Cadastrar Categoria
-                            </Typography>
+                           <AddCircleOutlineIcon />
                         </Box>
                     </Link>
 
-
-
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Pesquisar…"
-                            inputProps={{ "aria-label": "search" }}
-                        />
-                    </Search>
                     <Link to="/login" className="text-decoration2">
-                        <Box marginLeft={80} className="cursor">
+                        <Box marginLeft={95} className="cursor">
                             <Typography variant="h6" color="inherit">
                                 Logout
                             </Typography>
