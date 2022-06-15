@@ -1,39 +1,11 @@
-.backgroundSobre {
-  background-color: #c3e0da !important;
-  height: 100vh;
-}
-
-.devs {
-  width: 100px;
-  height: 100px;
-  border-radius: 150px;
-}
-
-.centro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 20px; */
-  margin: 50px !important;
-}
-
-.centro div {
-  margin: 10px;
-}
-
-.espaco {
-  margin-bottom: -5px;
-}
-
-.centro footer {
-  margin: 10px;
-}
-
-.integrantes {
-  display: flex;
-  justify-content: center;
-}
-
-.icon a {
-  color: rgb(46, 46, 46) !important;
-}
+.fotos-produtos{
+  height: 10px;
+  right: 10px;
+  
+  }
+  .fotos-produtos{
+    height: 10px;
+    right: 10px;
+    
+    }
+      
