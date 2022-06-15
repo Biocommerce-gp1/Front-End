@@ -122,7 +122,7 @@ function Login() {
                   gutterBottom
                   align="center"
                 >
-                  Login:
+                  Login
                 </Typography>
 
                 <form onSubmit={onSubmit}>
@@ -168,23 +168,7 @@ function Login() {
                     </Button>
                   </Box>
                 </form>
-                <Box display="flex" justifyContent="center" marginTop={2}>
-                  <Box marginRight={1} className="cadastrar">
-                    <Typography variant="subtitle1" gutterBottom align="center">
-                      Não tem uma conta?
-                    </Typography>
-                  </Box>
-                  <Link className="text-decoration" to="/cadastro">
-                    <Typography
-                      variant="subtitle1"
-                      gutterBottom
-                      align="center"
-                      className="cadastrar-conta"
-                    >
-                      Cadastre-se
-                    </Typography>
-                  </Link>
-                </Box>
+                <Box display="flex" justifyContent="center" marginTop={2}></Box>
               </Box>
             </Box>
           </Box>
