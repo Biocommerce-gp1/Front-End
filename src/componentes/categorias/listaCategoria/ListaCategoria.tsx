@@ -76,7 +76,7 @@ function ListaCategoria() {
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
-                  to={`/formularioTema/${categoria.id}`}
+                  to={`/formularioCategoria/${categoria.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
@@ -92,7 +92,7 @@ function ListaCategoria() {
                 </Link>
 
                 <Link
-                  to={`/deletarTema/${categoria.id}`}
+                  to={`/deletarCategoria/${categoria.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>

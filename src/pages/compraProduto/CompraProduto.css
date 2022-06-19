@@ -1,0 +1,119 @@
+.bodyProduto{
+    width: 100%;
+    height: 100%;
+   margin-bottom: 30px;
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+  
+   }
+.imgDescricao
+{
+    width: 500px;
+    height: 550px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.imgDoProduto
+{
+    width: 96%;
+    height:290px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.imgDoProduto img
+{
+    width: 60%;
+    height:100%;
+   
+}
+.informacoesDoProduto
+{   
+    width: 96%;
+    height: 290px;
+    margin: 10px;
+}
+.informacoesDoProduto div
+{   
+    font-size: 18px;
+    margin: 10px;
+}
+.decricaoProduto
+{
+    width: 500px;
+    height: 550px;
+    margin: 10px;
+    
+    display: flex;
+    
+    flex-direction: column;
+}
+.nomeDoProduto
+{
+    font-size: 30px;
+    color: rgb(58, 54, 54);
+    margin: 10px;
+}
+.hrProduto
+{
+    width: 70px;
+    height: 4px;
+    background-color: rgb(58, 54, 54);
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.por
+{
+    font-size: 20px;
+    color: rgb(126, 119, 119);
+    margin: 10px;
+    margin-top: 30px;
+}
+.precoProduto
+{
+    font-size: 40px;
+    color: rgb(58, 54, 54);
+    font-weight: bold;
+    margin: 10px;
+}
+.btnComprar
+{
+    display: flex;
+    margin: 26px;
+    margin-top: 70px;
+    width: 90%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.btnComprar
+{
+    display: flex;
+    margin: 26px;
+    margin-top: 70px;
+    width: 90%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #8fbd4f;
+    
+}
+.btnComprar div
+{
+    font-size: 30px;
+    color: rgb(58, 54, 54);
+   
+    
+}
+.desconto
+{
+    font-size: 20px;
+    color: rgb(126, 119, 119);
+    
+    margin: 10px;
+}

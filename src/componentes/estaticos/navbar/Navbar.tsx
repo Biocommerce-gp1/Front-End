@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import { styled, alpha } from "@mui/material/styles";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import { addToken } from "../../../store/tokens/actions";
-import { toast } from "react-toastify";
 import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
-import { ExitToApp } from "@material-ui/icons";
 import NavbarLogado from "./NavbarLogado";
 
 function Navbar() {
@@ -35,29 +28,6 @@ function Navbar() {
     senha: "",
     tipo: "",
   });
-  // const id = useSelctor...
-
-  //Service buscaId(id)
-
-  //const [user, setUser] = useState<User>
-
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  function goLogout() {
-    dispatch(addToken(""));
-    toast.info("Usuário deslogado", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
-      progress: undefined,
-    });
-    navigate("/home");
-  }
 
   async function findById(id: string) {
     buscaId(`/usuarios/${id}`, setUser, {
@@ -90,7 +60,7 @@ function Navbar() {
           
         <Box  className="cursor2" >
           <Typography color="inherit">
-           seja vem vinde, faça seu 
+           Seja bem vinde, faça seu 
           </Typography>
         </Box>
         
@@ -117,37 +87,14 @@ function Navbar() {
         </Box>
         </Link>
 
-          <Link to="/home" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
-              <Typography  color="inherit">
-                Home
-              </Typography>
-            </Box>
-          </Link>
-
          
-          <Link to="/produto" className="text-decoration">
-            <Box marginLeft={8} className="cursor">
-              <Typography  color="inherit">
-                Produtos
-              </Typography>
-            </Box>
-          </Link>
-          
-          <Link to="/sobre-nos" className="text-decoration">
-            <Box  marginLeft={8} className="cursor">
-              <Typography  color="inherit">
-                Sobre nós
-              </Typography>
-            </Box>
-          </Link>
          
         </Toolbar>
       </AppBar>
     );
   }
 
-  return <>{navbar}</>;
+  return (<>{navbar}</>);
 }
 
 export default Navbar;

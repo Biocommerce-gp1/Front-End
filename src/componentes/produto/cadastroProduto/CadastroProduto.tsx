@@ -102,7 +102,7 @@ function CadastroProduto() {
     e.preventDefault();
 
     if (id !== undefined) {
-       put(`/produto`, produto, setProduto, {
+      put(`/produto`, produto, setProduto, {
         headers: {
           Authorization: token,
         },
@@ -237,10 +237,6 @@ function CadastroProduto() {
           </Button>
         </FormControl>
       </form>
-
-      <Container>
-        <ListaProduto />
-      </Container>
     </Container>
   );
 }

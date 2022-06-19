@@ -1,105 +1,266 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import Produto from "../../../models/Produto";
-import { busca } from "../../../services/Service";
+import { busca, buscaId } from "../../../services/Service";
 import './ListaProduto.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from "react-toastify";
+import NavBarPadrao from "../../estaticos/navBarPadrao/NavBarPadrao";
+import Container from "@mui/material/Container/Container";
+import User from "../../../models/User";
+
 
 function ListaProduto() {
-  let navigate = useNavigate();
+
+  var token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  const id = useSelector<TokenState, TokenState["id"]>((state) => state.id);
+
+  const tipo = useSelector<TokenState, TokenState["tipo"]>(
+    (state) => state.tipo
+  );
+
+  const [user, setUser] = useState<User>({
+    id: +id,
+    nome: "",
+    usuario: "",
+    senha: "",
+    tipo: "",
+  });
+
+  function msgNlogado() {
+    toast.info("Você precisa estar logado para comprar!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
+  }
+
+
+
+  async function findById(id: string) {
+    buscaId(`/usuarios/${id}`, setUser, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+
+  console.log("TIPO DO USUÁRIO: " + tipo);
+
+  useEffect(() => {
+    if (id !== undefined) {
+      findById(id);
+    }
+  }, [id]);
 
   const [produtos, setProdutos] = useState<Produto[]>([])
 
-  // const token = useSelector<TokenState, TokenState["tokens"]>(
-  //   (state) => state.tokens
-  // );
 
-  // useEffect(() => {
-  //   if (token === "") {
-  //     toast.error('Você precisa estar logado', {
-  //       position: "top-right",
-  //       autoClose: 2000,
-  //       hideProgressBar: false,
-  //       closeOnClick: true,
-  //       pauseOnHover: false,
-  //       draggable: false,
-  //       theme: "colored",
-  //       progress: undefined,
-  //     });
-  //     navigate("/login");
-  //   }
-  // }, [token]);
+  var corpoProd;
+
+  if (tipo === "adm") {
+    corpoProd =
+      <>
+        <div className="prodSeparator">
+          <h2>Todos os Produtos</h2>
+          <div className="lineSeparator">
+          </div>
+        </div>
+        <div className="blocoDeProd">
+          {produtos.map((produto) => (
+            <div className="cardBody">
+              <div className="cardImg">
+                <img className="imgProd" src={produto.foto} alt="" />
+              </div>
+
+              <div className="descricaoCard">
+                <div className="alignCenter">
+                  <div className="prodName">{produto.nome}</div>
+                  <div className="prodValue">R$ {produto.preco}</div>
+
+                  <Link to={`/formularioProduto/${produto.id}`}>
+                    <button className="buttonAtt">
+                      <div>Atualizar</div>
+                    
+
+                  <Link
+                    to={`/deletarProduto/${produto.id}`}
+                    className="text-decorator-none"
+                  >  <button className="buttondelete">X</button>
+                  </Link>
+                  </button>
+                  </Link>
+
+
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </>
+
+  }
+  else if (token === "") {
+
+    corpoProd = <>
+      <div className="prodSeparator">
+        <h2>Todos os Produtos</h2>
+        <div className="lineSeparator">
+        </div>
+      </div>
+      <div className="blocoDeProd">
+        {produtos.map((produto) => (
+          <div className="cardBody">
+            <div className="cardImg">
+              <img className="imgProd" src={produto.foto} alt="" />
+            </div>
+
+            <div className="descricaoCard">
+              <div className="alignCenter">
+                <div className="prodName">{produto.nome}</div>
+                <div className="prodValue">R$ {produto.preco}</div>
+
+
+                <button onClick={msgNlogado} className="buttonComprar">
+
+                  <div>Comprar</div>
+
+                  <button className="buttonAddKart">+</button></button>
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </>
+
+  }
+  else {
+    corpoProd = <>
+      <div className="prodSeparator">
+        <h2>Todos os Produtos</h2>
+        <div className="lineSeparator">
+        </div>
+      </div>
+      <div className="blocoDeProd">
+        {produtos.map((produto) => (
+          <div className="cardBody">
+            <div className="cardImg">
+              <img className="imgProd" src={produto.foto} alt="" />
+            </div>
+
+            <div className="descricaoCard">
+              <div className="alignCenter">
+                <div className="prodName">{produto.nome}</div>
+                <div className="prodValue">R$ {produto.preco}</div>
+
+
+                <button className="buttonComprar">
+                  <Link to={`/compraProduto/${produto.id}`}>
+                    <div>Comprar</div>
+                  </Link>
+                  <button className="buttonAddKart">+</button></button>
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </>
+
+  }
 
   async function getProduto() {
-    await busca("/produto", setProdutos, {});
+    await busca(`/produto`, setProdutos, {});
   }
 
   useEffect(() => {
     getProduto();
   }, [produtos.length]);
+  console.log(produtos);
+
+  //MONTAR O CARD DE PRODUTO PARA USUARIO DIFERENTE DE ADMINISTRADOR
 
   return (
-    
-    <Box display="flex" >
-      {produtos.map((produto) => (
-        <Box  m={2}>
-          <Card variant="outlined"  >
-            <CardContent>
-              
-              <Typography variant="h5" component="h2">
-                {produto.nome}
-              </Typography>
 
-              <Typography variant="body2" component="p">
-                {produto.descricao}
-              </Typography>
+    <>
+      <NavBarPadrao />
+      <Container maxWidth="lg">
+        {corpoProd}
+      </Container>
 
-              <Typography variant="body2" component="p">
-                {produto.categoria?.secao}
-              </Typography>
-             
-              <img className="zoo "src={produto.foto} alt="Fotos dos produtos"    />
-             
+    </>
 
-            </CardContent>
+    // <Box display="flex" >
+    //   {produtos.map((produto) => (
+    //     <Box  m={2}>
+    //       <Card variant="outlined"  >
+    //         <CardContent>
 
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/formularioProduto/${produto.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                      Atualizar
-                    </Button>
-                  </Box>
-                </Link>
+    //           <Typography variant="h5" component="h2">
+    //             {produto.nome}
+    //           </Typography>
 
-                <Link
-                  to={`/deletarProduto/${produto.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      Deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
-          </Card>
-        </Box>
-      ))}
-    </Box>
+    //           <Typography variant="body2" component="p">
+    //             {produto.descricao}
+    //           </Typography>
+
+    //           <Typography variant="body2" component="p">
+    //             {produto.categoria?.secao}
+    //           </Typography>
+
+    //           <img className="zoo "src={produto.foto} alt="Fotos dos produtos"    />
+
+
+    //         </CardContent>
+
+    //         <CardActions>
+    //           <Box display="flex" justifyContent="center" mb={1.5}>
+    //             <Link
+    //               to={`/formularioProduto/${produto.id}`}
+    //               className="text-decorator-none"
+    //             >
+    //               <Box mx={1}>
+    //                 <Button
+    //                   variant="contained"
+    //                   className="marginLeft"
+    //                   size="small"
+    //                   color="primary"
+    //                 >
+    //                   Atualizar
+    //                 </Button>
+    //               </Box>
+    //             </Link>
+
+    //             <Link
+    //               to={`/deletarProduto/${produto.id}`}
+    //               className="text-decorator-none"
+    //             >
+    //               <Box mx={1}>
+    //                 <Button variant="contained" size="small" color="secondary">
+    //                   Deletar
+    //                 </Button>
+    //               </Box>
+    //             </Link>
+    //           </Box>
+    //         </CardActions>
+    //       </Card>
+    //     </Box>
+    //   ))}
+    // </Box>
   );
 }
 

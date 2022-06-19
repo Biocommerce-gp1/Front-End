@@ -1,56 +1,30 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import { styled, alpha } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { toast } from "react-toastify";
+import { addToken } from "../../../store/tokens/actions";
+import { useDispatch } from "react-redux";
+
 
 function NavbarAdm() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const Search = styled("div")(({ theme }) => ({
-        position: "relative",
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        "&:hover": {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginLeft: 0,
-        width: "100%",
-        [theme.breakpoints.up("sm")]: {
-            marginLeft: theme.spacing(1),
-            width: "auto",
-        },
-    }));
-
-    const SearchIconWrapper = styled("div")(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: "100%",
-        position: "absolute",
-        pointerEvents: "none",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-    }));
-
-    const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: "inherit",
-        "& .MuiInputBase-input": {
-            padding: theme.spacing(1, 1, 1, 0),
-            // vertical padding + font size from searchIcon
-            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-            transition: theme.transitions.create("width"),
-            width: "100%",
-            [theme.breakpoints.up("sm")]: {
-                width: "12ch",
-                "&:focus": {
-                    width: "20ch",
-                },
-            },
-        },
-    }));
-
+    function goLogout() {
+        dispatch(addToken(""));
+        toast.info("Usuário deslogado", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+        navigate("/home");
+      }
 
     return (
         <>
@@ -93,10 +67,10 @@ function NavbarAdm() {
                         </Box>
                     </Link>
 
-                    <Link to="/login" className="text-decoration2">
+                    <Link to="/login" onClick={goLogout} className="text-decoration2">
                         <Box marginLeft={95} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Logout
+                                Sair
                             </Typography>
                         </Box>
                     </Link>
@@ -107,3 +81,5 @@ function NavbarAdm() {
 }
 
 export default NavbarAdm;
+
+
