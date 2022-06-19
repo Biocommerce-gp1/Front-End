@@ -10,6 +10,7 @@ function CadastroAdm() {
     let navigate = useNavigate();
 
     const [confirmarSenha, setConfirmarSenha] = useState<String>("");
+    const [usuario, setUsuario] = useState<User[]>([]);
 
     const [user, setUser] = useState<User>({
         id: 0,
@@ -50,32 +51,16 @@ function CadastroAdm() {
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-                toast.success("Usuário cadastrado com sucesso!", {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "colored",
-                    progress: undefined,
-                });
+                alert("Usuário cadastrado com sucesso");
             } catch (error) {
                 console.log(`Error: ${error}`);
 
-
+                alert("Tá dando erro no cod");
             }
         } else {
-            toast.error("Dados do usuário inconsistentes. Erro ao logar", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+            alert(
+                "Dados inconsistentes! Por favor, verifique as informações passadas"
+            );
 
             setUser({ ...user, senha: "" });
             setConfirmarSenha("");
