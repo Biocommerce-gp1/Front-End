@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
-import "./CadastroUsuario.css";
 import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
 import { toast } from "react-toastify";
@@ -51,16 +50,41 @@ function CadastroAdm() {
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-                alert("Usuário cadastrado com sucesso");
+                toast.success("Usuário cadastrado com sucesso!", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                  });
             } catch (error) {
                 console.log(`Error: ${error}`);
 
-                alert("Tá dando erro no cod");
+                toast.error("Erro ao cadastrar! Por favor, verifique a senha inserida", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                  });
             }
         } else {
-            alert(
-                "Dados inconsistentes! Por favor, verifique as informações passadas"
-            );
+            toast.error("Dados inconsistentes! Por favor, verifique as informações passadas", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
 
             setUser({ ...user, senha: "" });
             setConfirmarSenha("");
