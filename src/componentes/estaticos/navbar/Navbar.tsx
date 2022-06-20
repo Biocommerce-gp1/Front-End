@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import { styled, alpha } from "@mui/material/styles";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
