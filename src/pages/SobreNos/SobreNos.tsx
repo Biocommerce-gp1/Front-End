@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import NavBarPadrao from '../../componentes/estaticos/navBarPadrao/NavBarPadrao';
+import Container from '@mui/material/Container/Container';
 
 function SobreNos() {
 
@@ -16,6 +18,9 @@ function SobreNos() {
 
   return (
     <>
+    <NavBarPadrao />
+    <Container maxWidth="lg">
+
       <main id="sobre">
         <section>
 
@@ -120,7 +125,7 @@ function SobreNos() {
 
     </Grid>
 
-
+</Container>
       
     </>
   );

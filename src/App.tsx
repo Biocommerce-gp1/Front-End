@@ -19,7 +19,7 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Login from './pages/Login/Login';
 import CompraProduto from './pages/compraProduto/CompraProduto';
-import CorpoProdAdm from './componentes/produto/corpoProduto/corpoProdutoAdm/CorpoProdAdm';
+import Contato from './pages/contato/Contato';
 
 
 
@@ -45,9 +45,8 @@ function App() {
             <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
             <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
             <Route path="/formularioProduto" element={<CadastroProduto />} />
-            {/* <Route path="/formularioProduto/:id" element={<CorpoProdAdm />} />
-            <Route path="/formularioProduto" element={<CorpoProdAdm />} /> */}
             <Route path="/compraProduto/:id" element={<CompraProduto />} />
+            <Route path="/contato" element={<Contato />} />
 
           </Routes>
         </div>

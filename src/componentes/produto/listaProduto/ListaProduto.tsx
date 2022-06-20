@@ -168,7 +168,7 @@ function ListaProduto() {
 
 
                 <button className="buttonComprar">
-                  <Link to={`/compraProduto/${produto.id}`}>
+                  <Link to={`/compraProduto/${produto.id}`} className='text-decorator-none'>
                     <div>Comprar</div>
                   </Link>
                   <button className="buttonAddKart">+</button></button>

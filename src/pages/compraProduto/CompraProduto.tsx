@@ -35,8 +35,8 @@ function CompraProduto() {
         })
     }
 
-    function goLogout() {
-        toast.info("Usuário deslogado", {
+    function Carrinho() {
+        toast.info("Produto adicionado ao carrinho", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -88,7 +88,7 @@ function CompraProduto() {
                         {produtos?.desconto}% de desconto
                         </div>
                         <div className="">
-                            <button className="btnComprar"> <div>Comprar</div>  </button>
+                            <button className="btnComprar" onClick={Carrinho}> <div>Comprar</div>  </button>
                         </div>
 
                     </div>

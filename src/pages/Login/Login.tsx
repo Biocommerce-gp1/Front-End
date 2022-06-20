@@ -164,6 +164,18 @@ function Login() {
                     >
                       Entrar
                     </Button>
+
+                    <Link to='/home'>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className="botao"
+                      type="submit"
+                    >
+                      Cancelar
+                    </Button>
+                    </Link>
+                    
                   </Box>
                 </form>
                 <Box display="flex" justifyContent="center" marginTop={2}></Box>
