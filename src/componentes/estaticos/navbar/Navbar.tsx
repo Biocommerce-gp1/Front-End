@@ -49,43 +49,46 @@ function Navbar() {
 
   if (tipo === "adm") navbar = <NavbarAdm />;
 
-  else if (token !== ""){
+  else if (token !== "") {
     navbar = <NavbarLogado />
   }
-else {
+  else {
+    navbar = (
+      <AppBar position="static">
+        <Toolbar className="fundo" variant="dense">
+          <Link to="/home"></Link>
 
-          
-        <Box  className="cursor2" >
-          <Typography color="inherit">
-           Seja bem vinde, faça seu 
-          </Typography>
-        </Box>
-        
+          <Box className="cursor2" >
+            <Typography color="inherit">
+              Seja bem vinde, faça seu
+            </Typography>
+          </Box>
+
 
           <Link to="/login" className="text-decoration">
-        <Box  mx={0.5} className="cursor">
-          <Typography color="inherit">
-           Login
-          </Typography>
-        </Box>
-        </Link>
+            <Box mx={0.5} className="cursor">
+              <Typography color="inherit">
+                Login
+              </Typography>
+            </Box>
+          </Link>
 
-        <Box  className="cursor2" >
-          <Typography color="inherit">
-          ou
-          </Typography>
-        </Box>
+          <Box className="cursor2" >
+            <Typography color="inherit">
+              ou
+            </Typography>
+          </Box>
 
-        <Link to="/cadastro" className="text-decoration">
-        <Box  mx={0.5} className="cursor">
-          <Typography color="inherit">
-           Cadastre-se
-          </Typography>
-        </Box>
-        </Link>
+          <Link to="/cadastro" className="text-decoration">
+            <Box mx={0.5} className="cursor">
+              <Typography color="inherit">
+                Cadastre-se
+              </Typography>
+            </Box>
+          </Link>
 
-         
-         
+
+
         </Toolbar>
       </AppBar>
     );
