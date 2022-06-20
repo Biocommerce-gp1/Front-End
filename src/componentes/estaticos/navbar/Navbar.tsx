@@ -4,12 +4,9 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import { addToken } from "../../../store/tokens/actions";
-import { toast } from "react-toastify";
 import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
-import { ExitToApp } from "@material-ui/icons";
 import NavbarLogado from "./NavbarLogado";
 import NavBarDeslogado from "../navbarDeslogado/NavBarDeslogado";
 
@@ -32,29 +29,6 @@ function Navbar() {
     senha: "",
     tipo: "",
   });
-  // const id = useSelctor...
-
-  //Service buscaId(id)
-
-  //const [user, setUser] = useState<User>
-
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  function goLogout() {
-    dispatch(addToken(""));
-    toast.info("Usuário deslogado", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
-      progress: undefined,
-    });
-    navigate("/home");
-  }
 
   async function findById(id: string) {
     buscaId(`/usuarios/${id}`, setUser, {
@@ -80,12 +54,44 @@ function Navbar() {
   }
 else {
 
-      navbar = <NavBarDeslogado />
+          
+        <Box  className="cursor2" >
+          <Typography color="inherit">
+           Seja bem vinde, faça seu 
+          </Typography>
+        </Box>
+        
 
+          <Link to="/login" className="text-decoration">
+        <Box  mx={0.5} className="cursor">
+          <Typography color="inherit">
+           Login
+          </Typography>
+        </Box>
+        </Link>
+
+        <Box  className="cursor2" >
+          <Typography color="inherit">
+          ou
+          </Typography>
+        </Box>
+
+        <Link to="/cadastro" className="text-decoration">
+        <Box  mx={0.5} className="cursor">
+          <Typography color="inherit">
+           Cadastre-se
+          </Typography>
+        </Box>
+        </Link>
+
+         
+         
+        </Toolbar>
+      </AppBar>
+    );
   }
 
-  return ({ navbar }
-  )
+  return (<>{navbar}</>);
 }
 
 export default Navbar;

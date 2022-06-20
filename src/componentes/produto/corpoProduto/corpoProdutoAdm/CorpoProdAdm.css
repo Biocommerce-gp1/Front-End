@@ -1,43 +1,46 @@
-
-.body{
-    width: 100%;
-    height: 100%;
-   margin-bottom: 30px;
-    
-    
-  }
-  .prodSeparator 
-  {
-    margin-top: 40px;
-    width: 100%;
-    height: 70px;
-
-
-   
-    
-    
-  }
-  .prodSeparator h2
-  {
-    color: #8fbd4f;
-   
-    
-    
-  }
-  .lineSeparator
-  {
-    width: 100%;
-    height: 1px;
-    background-color: #8fbd4f;
-  }
-  .blocoDeProd
-  {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap; 
+.cardBody
+{
+  margin: 7px;
+  width: 220px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.2s;
+}
+.cardBody:hover
+{
+  margin-bottom: 30px;
+  width: 225px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.2s;
+}
+.cardImg
+{
+  margin: 7px;
+  width: 200px;
+  height: 190px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.descricaoCard
+{
+  width: 200px;
+  height: 130px;
+  margin: 7px;
+}
+.alignCenter
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
 }
 .buttonAtt
 {
@@ -81,8 +84,8 @@ margin-left: 10px;
 .buttondelete
 {
   width: 50px;
-  height: 40px;
-  background-color: #990000dc;
+  height: 100%;
+  background-color: #e71b1b;
   border: none;
   color: white;
   display: flex;
@@ -107,8 +110,4 @@ margin-left: 10px;
 {
   color: #8fbd4f;
   font-weight: bold;
-}
-.text-decorator-none
-{
-  text-decoration: none;
 }

@@ -1,9 +1,30 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { toast } from "react-toastify";
+import { addToken } from "../../../store/tokens/actions";
+import { useDispatch } from "react-redux";
+
 
 function NavbarAdm() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    function goLogout() {
+        dispatch(addToken(""));
+        toast.info("Usuário deslogado", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+        navigate("/home");
+      }
 
     return (
         <>
@@ -46,10 +67,10 @@ function NavbarAdm() {
                         </Box>
                     </Link>
 
-                    <Link to="/login" className="text-decoration2">
+                    <Link to="/login" onClick={goLogout} className="text-decoration2">
                         <Box marginLeft={95} className="cursor">
                             <Typography variant="h6" color="inherit">
-                                Logout
+                                Sair
                             </Typography>
                         </Box>
                     </Link>
@@ -60,3 +81,5 @@ function NavbarAdm() {
 }
 
 export default NavbarAdm;
+
+

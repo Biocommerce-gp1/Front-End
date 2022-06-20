@@ -66,7 +66,7 @@ function CadastroUsuario() {
        
       }
     } else {
-      toast.error("Dados do usuário inconsistentes. Erro ao logar", {
+      toast.error("Dados do usuário inconsistentes. Erro ao Cadastrar", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,

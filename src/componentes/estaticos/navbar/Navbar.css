@@ -18,7 +18,11 @@
 }
 
 .cursor2{
-    cursor: pointer;
+    
     text-decoration: none;
     color: #8FBD4F;
+}
+.exitApp
+{
+    margin-top: 6px;
 }
