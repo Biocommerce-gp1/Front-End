@@ -118,6 +118,7 @@ function CadastroProduto() {
         progress: undefined,
       });
     } else {
+      console.log(produto)
       post(`/produto`, produto, setProduto, {
         headers: {
           Authorization: token,
