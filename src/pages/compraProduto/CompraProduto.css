@@ -88,7 +88,8 @@
     height: 60px;
     justify-content: center;
     align-items: center;
-    
+    cursor: pointer;
+    border-radius: 10px;
 }
 .btnComprar
 {

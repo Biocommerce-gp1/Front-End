@@ -18,10 +18,10 @@ function Footer() {
                 <div className="footer-col">
                     <h4>Acesso Rápido</h4>
                         <ul>
-                            <li><a href="/home">Home</a></li>
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/cadastro">Cadastro</a></li>
-                            <li><a href="/produto">Produtos</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Cadastro</a></li>
+                            <li><a href="#">Produtos</a></li>
 
                         </ul>
                     

@@ -14,7 +14,7 @@ function CompraProduto() {
 
     let navigate = useNavigate();
 
-  const { id } = useParams<{ id: string }>();
+    const { id } = useParams<{ id: string }>();
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -35,70 +35,131 @@ function CompraProduto() {
         })
     }
 
-    function Carrinho() {
-        toast.info("Produto adicionado ao carrinho", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "colored",
-          progress: undefined,
+    function compraNLogado() {
+        toast.info("Você precisa estar logado para comprar!", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
         });
-        navigate("/home");
-      }
+    }
 
+    function compraRealizada() {
+        toast.success("Compra realizada com sucesso! Você receberá em breve um E-mail com a confirmação da sua compra", {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+    }
 
+        var userLogado;
 
-    return (
-        <>
-            <NavBarPadrao />
-            <Container maxWidth="lg">
-                <div className="bodyProduto">
-                    <div className="imgDescricao">
-                        <div className="imgDoProduto">
-                            <img src={produtos?.foto} alt="" />
-                        </div>
-
-                        <div className="informacoesDoProduto">
-                            <div>
-                                {produtos?.descricao}
+        if (token === "") {
+            userLogado = <><NavBarPadrao />
+                <Container maxWidth="lg">
+                    <div className="bodyProduto">
+                        <div className="imgDescricao">
+                            <div className="imgDoProduto">
+                                <img src={produtos?.foto} alt="" />
                             </div>
+
+                            <div className="informacoesDoProduto">
+                                <div>
+                                    {produtos?.descricao}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+
+                        </div>
+
+                        <div className="decricaoProduto">
+                            <div className="nomeDoProduto">
+                                {produtos?.nome}
+                            </div>
+                            <div className="hrProduto"></div>
+                            <div className="por">
+                                Por:
+                            </div>
+                            <div className="precoProduto">
+                                R$:{produtos?.preco}
+                            </div>
+                            <div className="hrProduto"></div>
+                            <div className="desconto">
+                                {produtos?.desconto}% de desconto
+                            </div>
+                            <div className="">
+                                <button onClick={compraNLogado} className="btnComprar"> <div>Comprar</div>  </button>
+                            </div>
+
                         </div>
 
                     </div>
-                    <div>
+
+                </Container></>
+        }
+        else {
+            userLogado = <>
+                <NavBarPadrao />
+                <Container maxWidth="lg">
+                    <div className="bodyProduto">
+                        <div className="imgDescricao">
+                            <div className="imgDoProduto">
+                                <img src={produtos?.foto} alt="" />
+                            </div>
+
+                            <div className="informacoesDoProduto">
+                                <div>
+                                    {produtos?.descricao}
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+
+                        </div>
+
+                        <div className="decricaoProduto">
+                            <div className="nomeDoProduto">
+                                {produtos?.nome}
+                            </div>
+                            <div className="hrProduto"></div>
+                            <div className="por">
+                                Por:
+                            </div>
+                            <div className="precoProduto">
+                                R$:{produtos?.preco}
+                            </div>
+                            <div className="hrProduto"></div>
+                            <div className="desconto">
+                                {produtos?.desconto}% de desconto
+                            </div>
+                            <div className="">
+                                <button onClick={compraRealizada} className="btnComprar"> <div>Comprar</div>  </button>
+                            </div>
+
+                        </div>
 
                     </div>
+                </Container>
+            </>
+        }
+        return (
+            <>
+                {userLogado}
+            </>
+        );
 
-                    <div className="decricaoProduto">
-                        <div className="nomeDoProduto">
-                            {produtos?.nome}
-                        </div>
-                        <div className="hrProduto"></div>
-                        <div className="por">
-                            Por:
-                        </div>
-                        <div className="precoProduto">
-                            R$:{produtos?.preco}
-                        </div>
-                        <div className="hrProduto"></div>
-                        <div className="desconto">
-                        {produtos?.desconto}% de desconto
-                        </div>
-                        <div className="">
-                            <button className="btnComprar" onClick={Carrinho}> <div>Comprar</div>  </button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </Container>
-        </>
-    );
-
-}
-export default CompraProduto;
+    }
+    export default CompraProduto;
 

@@ -15,11 +15,10 @@ function Home() {
       <Container className="body" maxWidth="lg">
 
         <Link to='/contato'>
-        <div className="carrousel">
-          <img src="https://i.imgur.com/x0mAVsv.gif" alt="" />
-        </div>
+          <div className="carrousel">
+            <img src="https://i.imgur.com/x0mAVsv.gif" alt="" />
+          </div>
         </Link>
-       
 
 
 

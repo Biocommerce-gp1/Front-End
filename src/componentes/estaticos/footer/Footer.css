@@ -6,7 +6,6 @@
 }
 
 body{
-  
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
 }
@@ -18,6 +17,7 @@ body{
 }
 .footer{
    
+    margin-top: 30px;
     position: static;
     background-color: #0E3F2B;
     padding: 70px 0;

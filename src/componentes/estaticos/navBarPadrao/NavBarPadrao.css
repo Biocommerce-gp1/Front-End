@@ -1,4 +1,8 @@
 
+*
+{
+  text-decoration: none;
+}
 .body{
     width: 100%;
     height: 100%;
@@ -15,14 +19,11 @@
     direction: row;
   }
   
-  .navBarTwo
+  .navBarTwo 
   {
     width: 100%;
     height: 55px;
-    background-color: #8fbd4f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
   }
   .carrousel
   {
@@ -65,13 +66,22 @@
   display: flex;
   direction: inline;
   }
-  .li{
+  .nav div
+  {
+    height: 100%;
+  }
+
+  .li
+  {
     margin: 60px;
    list-style: none;
    font-size: 20px;
    transition: 0.2s;
    color: aliceblue;
    font-weight: bold;
+   text-decoration: none;
+   height: 100%;
+   
    
   }
   
