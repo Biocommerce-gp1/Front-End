@@ -3,6 +3,7 @@ import "./Home.css";
 import Container from "@mui/material/Container";
 import NavBarPadrao from "../../componentes/estaticos/navBarPadrao/NavBarPadrao";
 import CorpoProd from "../../componentes/produto/corpoProduto/corpoProdutoUser/CorpoProd";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -13,9 +14,12 @@ function Home() {
 
       <Container className="body" maxWidth="lg">
 
+        <Link to='/contato'>
         <div className="carrousel">
           <img src="https://i.imgur.com/x0mAVsv.gif" alt="" />
         </div>
+        </Link>
+       
 
 
 
