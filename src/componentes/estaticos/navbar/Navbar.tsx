@@ -8,10 +8,9 @@ import User from "../../../models/User";
 import NavbarAdm from "../navbarAdm/NavbarAdm";
 import { buscaId } from "../../../services/Service";
 import NavbarLogado from "./NavbarLogado";
-import NavBarDeslogado from "../navbarDeslogado/NavBarDeslogado";
 
 function Navbar() {
-
+  
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
@@ -49,7 +48,7 @@ function Navbar() {
 
   if (tipo === "adm") navbar = <NavbarAdm />;
 
-  else if (token !== "") {
+  else if (token !== ""){
     navbar = <NavbarLogado />
   }
   else {
@@ -58,37 +57,38 @@ function Navbar() {
         <Toolbar className="fundo" variant="dense">
           <Link to="/home"></Link>
 
-          <Box className="cursor2" >
-            <Typography color="inherit">
-              Seja bem vinde, faça seu
-            </Typography>
-          </Box>
-
+          
+        <Box  className="cursor2" >
+          <Typography color="inherit">
+           Seja bem vinde, faça seu 
+          </Typography>
+        </Box>
+        
 
           <Link to="/login" className="text-decoration">
-            <Box mx={0.5} className="cursor">
-              <Typography color="inherit">
-                Login
-              </Typography>
-            </Box>
-          </Link>
+        <Box  mx={0.5} className="cursor">
+          <Typography color="inherit">
+           Login
+          </Typography>
+        </Box>
+        </Link>
 
-          <Box className="cursor2" >
-            <Typography color="inherit">
-              ou
-            </Typography>
-          </Box>
+        <Box  className="cursor2" >
+          <Typography color="inherit">
+          ou
+          </Typography>
+        </Box>
 
-          <Link to="/cadastro" className="text-decoration">
-            <Box mx={0.5} className="cursor">
-              <Typography color="inherit">
-                Cadastre-se
-              </Typography>
-            </Box>
-          </Link>
+        <Link to="/cadastro" className="text-decoration">
+        <Box  mx={0.5} className="cursor">
+          <Typography color="inherit">
+           Cadastre-se
+          </Typography>
+        </Box>
+        </Link>
 
-
-
+         
+         
         </Toolbar>
       </AppBar>
     );

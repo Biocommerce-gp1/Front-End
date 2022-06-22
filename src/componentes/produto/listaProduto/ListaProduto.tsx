@@ -31,8 +31,9 @@ function ListaProduto() {
     tipo: "",
   });
 
-  function msgNlogado() {
-    toast.info("Você precisa estar logado para comprar!", {
+  
+  function AddToKart() {
+    toast.info("Produto adicionado ao carrinho", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -43,7 +44,6 @@ function ListaProduto() {
       progress: undefined,
     });
   }
-
 
 
   async function findById(id: string) {
@@ -132,11 +132,11 @@ function ListaProduto() {
                 <div className="prodValue">R$ {produto.preco}</div>
 
 
-                <button onClick={msgNlogado} className="buttonComprar">
-
-                  <div>Comprar</div>
-
-                  <button className="buttonAddKart">+</button></button>
+                <button className="buttonComprar">
+                  <Link to={`/compraProduto/${produto.id}`} className='text-decorator-none'>
+                    <div className="ComprarBtn">Comprar</div>
+                  </Link>
+                  <button onClick={AddToKart} className="buttonAddKart">+</button></button>
               </div>
 
             </div>
@@ -169,9 +169,9 @@ function ListaProduto() {
 
                 <button className="buttonComprar">
                   <Link to={`/compraProduto/${produto.id}`} className='text-decorator-none'>
-                    <div>Comprar</div>
+                    <div className="ComprarBtn">Comprar</div>
                   </Link>
-                  <button className="buttonAddKart">+</button></button>
+                  <button onClick={AddToKart} className="buttonAddKart">+</button></button>
               </div>
 
             </div>

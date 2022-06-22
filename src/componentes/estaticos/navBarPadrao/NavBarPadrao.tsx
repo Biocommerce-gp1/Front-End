@@ -22,21 +22,32 @@ export default function NavBarPadrao() {
 
       <div className="navBarTwo">
         <div className="nav">
+          <div>
           <Link to="/home">
             <li className="li">Home</li>
           </Link>
-
+          </div>
+        
+          <div>
           <Link to="/produto">
             <li className="li">Produtos</li>
           </Link>
-
+          </div>
+          
+          <div>
           <Link to="/sobre">
             <li className="li">Sobre Nós</li>
           </Link>
+          </div>
 
-          <Link to="/contato">
+         <div>
+         <Link to="/contato">
             <li className="li">Contato</li>
           </Link>
+         </div>
+        
+         
+         
 
 
         </div>
