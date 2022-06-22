@@ -36,9 +36,9 @@ function CompraProduto() {
     }
 
     function Carrinho() {
-        toast.info("Produto adicionado ao carrinho", {
+        toast.success("Compra finalizada com sucesso, você receberá um e-mail de confirmação", {
           position: "top-right",
-          autoClose: 2000,
+          autoClose: 4000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -87,7 +87,7 @@ function CompraProduto() {
                         <div className="desconto">
                         {produtos?.desconto}% de desconto
                         </div>
-                        <div className="">
+                        <div className="btnComprar">
                             <button className="btnComprar" onClick={Carrinho}> <div>Comprar</div>  </button>
                         </div>
 
