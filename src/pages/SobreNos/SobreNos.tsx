@@ -121,7 +121,7 @@ function SobreNos() {
             </div>
 
             <div className="cardDosDevs">
-              <div className='imgDev3'><p style={{ fontWeight: 'bold' }}>Carol Aizawa</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+              <div className='imgDev3'><p style={{ fontWeight: 'bold' }}>Carol Aizawa - Full Stack Developer Jr.</p><p>Apaixonada pelo aprendizado e ajudar as pessoas. Pensa na área de desenvolvimento web como uma forma de tornar a vida das pessoas mais prática, simples e acessível.</p></div>
               <div className="corpoContatoDev">
                 <a href="https://www.linkedin.com/in/carolina-aizawa-moreira-9b0624179/" target="_blank"><div className='linkedinIcon'></div></a>
 
@@ -131,7 +131,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev4'><p style={{ fontWeight: 'bold' }}>Douglas Rocha</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+            <div className='imgDev4'><p style={{ fontWeight: 'bold' }}>Douglas Rocha - Full Stack Developer Jr.</p><p>Um pequeno sonhador que almeja novos desafios, e que um dia vai fazer a diferença</p></div>
             <div className="corpoContatoDev">
               <a href="https://www.linkedin.com/in/doug-rocha/" target="_blank"><div className='linkedinIcon'></div>
               </a>
@@ -152,7 +152,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev6'><p style={{ fontWeight: 'bold' }}>Milene Bohomol</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+            <div className='imgDev6'><p style={{ fontWeight: 'bold' }}>Milene Bohomol - Full Stack Developer Jr.</p><p>Apaixonada por tecnologia. Persistente, criativa, estudiosa e com muita força de vontade e dedicação para alcançar todos os seus  objetivos.</p></div>
             <div className="corpoContatoDev">
 
               <a href="https://www.linkedin.com/in/milene-bohomol-16bb81237/" target="_blank"><div className='linkedinIcon'></div></a>
