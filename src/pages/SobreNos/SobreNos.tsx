@@ -103,7 +103,7 @@ function SobreNos() {
 
             <div className="cardDosDevs">
               <div className='imgDev1'><p  style={{ fontWeight: 'bold' }}>Amanda Lobo - Full Stack Developer Jr.</p> 
-              <p> Detalhista, focada, comunicativa, apaixonada pelo conhecimento, insaciável por novos desafios e irrefreável na resolução de problemas. Tem como principal objetivo se aprofundar na área de tecnologia</p> </div>
+              <p> "Detalhista, focada, comunicativa, apaixonada pelo conhecimento, insaciável por novos desafios e irrefreável na resolução de problemas. Tem como principal objetivo se aprofundar na área de tecnologia."</p> </div>
               <div className="corpoContatoDev">
                 <a href="https://www.linkedin.com/in/amandag-lobo/" target='_blank'><div className='linkedinIcon'></div></a>
                 <a href="https://github.com/amanda-lobo" target='_blank'><div className='githubIcon'></div></a>
@@ -111,7 +111,7 @@ function SobreNos() {
             </div>
 
             <div className="cardDosDevs">
-              <div className='imgDev2'><p style={{ fontWeight: 'bold' }}>Bruna Leitão</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+              <div className='imgDev2'><p style={{ fontWeight: 'bold' }}>Bruna Leitão</p><p>"Apaixonada por livros e por conhecer coisas novas, recentemente descobri que também amo programar. Cada dia mais entusiasmada a explorar o universo da tecnologia e programação."</p></div>
               <div className="corpoContatoDev">
                 <a href="https://www.linkedin.com/in/bruna-leitao/" target="_blank"><div className='linkedinIcon'></div></a>
 
@@ -121,7 +121,7 @@ function SobreNos() {
             </div>
 
             <div className="cardDosDevs">
-              <div className='imgDev3'><p style={{ fontWeight: 'bold' }}>Carol Aizawa - Full Stack Developer Jr.</p><p>Apaixonada pelo aprendizado e ajudar as pessoas. Pensa na área de desenvolvimento web como uma forma de tornar a vida das pessoas mais prática, simples e acessível.</p></div>
+              <div className='imgDev3'><p style={{ fontWeight: 'bold' }}>Carol Aizawa - Full Stack Developer Jr.</p><p>"Apaixonada pelo aprendizado e ajudar as pessoas. Pensa na área de desenvolvimento web como uma forma de tornar a vida das pessoas mais prática, simples e acessível."</p></div>
               <div className="corpoContatoDev">
                 <a href="https://www.linkedin.com/in/carolina-aizawa-moreira-9b0624179/" target="_blank"><div className='linkedinIcon'></div></a>
 
@@ -131,7 +131,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev4'><p style={{ fontWeight: 'bold' }}>Douglas Rocha - Full Stack Developer Jr.</p><p>Um pequeno sonhador que almeja novos desafios, e que um dia vai fazer a diferença</p></div>
+            <div className='imgDev4'><p style={{ fontWeight: 'bold' }}>Douglas Rocha - Full Stack Developer Jr.</p><p>"Um pequeno sonhador que almeja novos desafios, e que um dia vai fazer a diferença."</p></div>
             <div className="corpoContatoDev">
               <a href="https://www.linkedin.com/in/doug-rocha/" target="_blank"><div className='linkedinIcon'></div>
               </a>
@@ -141,7 +141,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev5'><p style={{ fontWeight: 'bold' }}>João Pedro - Full Stack Developer Jr.</p><p>Apaixonado pelo mundo da computação desde a adolescência, acredita na excelência profissional através da educação e desenvolvimento contínuo.</p></div>
+            <div className='imgDev5'><p style={{ fontWeight: 'bold' }}>João Pedro - Full Stack Developer Jr.</p><p>"Apaixonado pelo mundo da computação desde a adolescência, acredita na excelência profissional através da educação e desenvolvimento contínuo."</p></div>
             <div className="corpoContatoDev">
 
              <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-meira/" target="_blank"> <div className='linkedinIcon'></div></a>
@@ -152,7 +152,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev6'><p style={{ fontWeight: 'bold' }}>Milene Bohomol - Full Stack Developer Jr.</p><p>Apaixonada por tecnologia. Persistente, criativa, estudiosa e com muita força de vontade e dedicação para alcançar todos os seus  objetivos.</p></div>
+            <div className='imgDev6'><p style={{ fontWeight: 'bold' }}>Milene Bohomol - Full Stack Developer Jr.</p><p>"Apaixonada por tecnologia. Persistente, criativa, estudiosa e com muita força de vontade e dedicação para alcançar todos os seus  objetivos."</p></div>
             <div className="corpoContatoDev">
 
               <a href="https://www.linkedin.com/in/milene-bohomol-16bb81237/" target="_blank"><div className='linkedinIcon'></div></a>
@@ -163,7 +163,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev7'><p style={{ fontWeight: 'bold' }}>Thalmai Correia</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+            <div className='imgDev7'><p style={{ fontWeight: 'bold' }}>Thalmai Correia</p><p>"Ser curioso me fez querer entender o mundo da tecnologia e o que tem por trás dos sistemas tão fundamentais no nosso cotidiano."</p></div>
             <div className="corpoContatoDev">
 
               <a href="https://www.linkedin.com/in/thalmaicorreia/" target="_blank"><div className='linkedinIcon'></div> </a>
