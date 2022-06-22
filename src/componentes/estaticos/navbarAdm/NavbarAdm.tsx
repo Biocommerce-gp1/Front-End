@@ -31,7 +31,7 @@ function NavbarAdm() {
           theme: "colored",
           progress: undefined,
         });
-        navigate("/home");
+        navigate("/");
       }
 
       if(token !== "")
