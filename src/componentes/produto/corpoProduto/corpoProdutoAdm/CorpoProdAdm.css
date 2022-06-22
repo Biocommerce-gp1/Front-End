@@ -1,5 +1,4 @@
-.cardBody
-{
+.cardBody {
   margin: 7px;
   width: 220px;
   height: 100%;
@@ -8,8 +7,7 @@
   flex-direction: column;
   transition: 0.2s;
 }
-.cardBody:hover
-{
+.cardBody:hover {
   margin-bottom: 30px;
   width: 225px;
   height: 100%;
@@ -18,32 +16,27 @@
   flex-direction: column;
   transition: 0.2s;
 }
-.cardImg
-{
+.cardImg {
   margin: 7px;
   width: 200px;
   height: 190px;
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
-.descricaoCard
-{
+.descricaoCard {
   width: 200px;
   height: 130px;
   margin: 7px;
 }
-.alignCenter
-{
+.alignCenter {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
-.buttonAtt
-{
+.buttonAtt {
   margin-top: 20px;
   width: 200px;
   height: 40px;
@@ -59,12 +52,11 @@
   transition: 0.2s;
   position: static;
 }
-.buttonAtt:hover
-{
+.buttonAtt:hover {
   margin-top: 20px;
   width: 200px;
   height: 40px;
-  background-color:#719242;
+  background-color: #719242;
   color: white;
   font-weight: bold;
   justify-content: space-between;
@@ -76,38 +68,32 @@
   transition: 0.2s;
   position: static;
 }
-.buttonAtt div
-{
-margin-left: 10px;
+.buttonAtt div {
+  margin-left: 10px;
 }
 
-.buttondelete
-{
+.buttondelete {
   width: 50px;
   height: 100%;
   background-color: #e71b1b;
   border: none;
   color: white;
   display: flex;
-  
+
   justify-content: center;
   align-items: center;
   border-radius: 0px 5px 5px 0px;
-
 }
-.imgProd
-{
+.imgProd {
   display: flex;
   justify-content: center;
   width: 200px;
   height: 190px;
 }
-.prodName
-{
+.prodName {
   color: black;
 }
-.prodValue
-{
+.prodValue {
   color: #8fbd4f;
   font-weight: bold;
 }
