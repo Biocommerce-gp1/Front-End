@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
-import { AppBar, Toolbar, Typography, Box } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { toast } from "react-toastify";
-import { addToken } from "../../../store/tokens/actions";
+import { addTipo, addToken } from "../../../store/tokens/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import Navbar from "../navbar/Navbar";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import "./NavBarAdm.css";
+import { Box } from "@mui/material";
 
 
 function NavbarAdm() {
@@ -21,6 +23,7 @@ function NavbarAdm() {
 
   function goLogout() {
     dispatch(addToken(""));
+    dispatch(addTipo(""));
     toast.info("Usuário deslogado", {
       position: "top-right",
       autoClose: 2000,
@@ -70,13 +73,13 @@ function NavbarAdm() {
               </Box>
             </Link>
 
+
+
             <Link to={`/formularioCategoria`} className="text-decoration">
               <Box mx={1} className="cursor">
                 <AddCircleOutlineIcon />
               </Box>
             </Link>
-
-
 
             <Link to={`/home`} className="logoutAdm" onClick={goLogout}>
               <Box marginLeft={85} className="cursor">
@@ -85,7 +88,6 @@ function NavbarAdm() {
                 </Typography>
               </Box>
             </Link>
-
 
           </Toolbar>
         </AppBar>
