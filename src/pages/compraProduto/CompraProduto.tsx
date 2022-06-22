@@ -1,7 +1,7 @@
 import Container from "@material-ui/core/Container/Container";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavBarPadrao from "../../componentes/estaticos/navBarPadrao/NavBarPadrao";
 import Produto from "../../models/Produto";
@@ -98,6 +98,7 @@ function CompraProduto() {
                             <div className="desconto">
                                 {produtos?.desconto}% de desconto
                             </div>
+                            
                             <div className="">
                                 <button onClick={compraNLogado} className="btnComprar"> <div>Comprar</div>  </button>
                             </div>
@@ -144,9 +145,13 @@ function CompraProduto() {
                             <div className="desconto">
                                 {produtos?.desconto}% de desconto
                             </div>
+                            
+                            <Link to="/produto">
                             <div className="">
                                 <button onClick={compraRealizada} className="btnComprar"> <div>Comprar</div>  </button>
                             </div>
+                            </Link>
+                           
 
                         </div>
 
