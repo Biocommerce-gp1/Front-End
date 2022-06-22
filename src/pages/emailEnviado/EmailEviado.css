@@ -1,0 +1,47 @@
+.painelDeMsg {
+  margin-top: 40px;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.corpoDosEmailsRecebidos {
+  margin: 10px;
+  background-color: rgb(205, 206, 207);
+  width: 98%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.secoesDoEmail {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+  height: 100%;
+}
+.nome {
+  font-size: 20px;
+  font-weight: bold;
+}
+.assunto {
+  font-size: 18px;
+}
+.email {
+  font-size: 15px;
+  font-weight: bold;
+}
+.apagar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  background-color: rgba(255, 0, 0, 0.658);
+  height: 100%;
+  font-weight: bold;
+}

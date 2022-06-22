@@ -45,7 +45,7 @@ function Home() {
           <CorpoProd name={"Esponja Ecológica"} preco={"4.99"} link={"https://i.imgur.com/ltCOjzE.png"} />
           <CorpoProd name={"Tapete Ecológico"} preco={"49.99"} link={"https://i.imgur.com/6aSssSM.png"} />
           <CorpoProd name={"Cabide Fibra de Coco"} preco={"11.99"} link={"https://i.imgur.com/pfkNgs8.png"} />
-          <CorpoProd name={"Porta Celular Fibra de Coco"} preco={"49.99"} link={"https://i.imgur.com/qBiFzCS.png"} />
+          <CorpoProd name={"Porta Celular"} preco={"49.99"} link={"https://i.imgur.com/qBiFzCS.png"} />
 
         </div>
 

@@ -1,16 +1,48 @@
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import Container from '@mui/material/Container/Container'
-import React from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import NavBarPadrao from '../../componentes/estaticos/navBarPadrao/NavBarPadrao'
+import Contato from '../../models/Contato';
+import { postaMensagem } from '../../services/Service';
 import './Contato.css'
 
-function Contato() {
-   let navigate = useNavigate();
+function ContateNos()
+{
 
-    function envio() {
-        toast.info("Mensagem enviada", {
+    let navigate = useNavigate();
+
+    const [contato, setContato] = useState<Contato>({
+        id: 0,
+        nome: "",
+        email: "",
+        assunto: "",
+        mensagem: "",
+    });
+
+    const [contatoResult, setContatoResult] = useState<Contato>({
+        id: 0,
+        nome: "",
+        email: "",
+        assunto: "",
+        mensagem: "",
+    });
+
+
+
+    function updatedModelContato(e: ChangeEvent<HTMLInputElement>) {
+        setContato({
+            ...contato,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    async function cadastrar(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+        await postaMensagem(`/contate-nos`, contato, setContatoResult);
+        // await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
+        toast.success("Obrigado por nos contatar, em breve entraremos em contato via email!", {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -20,12 +52,11 @@ function Contato() {
             theme: "colored",
             progress: undefined,
           });
-        }
+          navigate("/home");
+      }
 
-        function placeholderHidden(){
-            <input className='inputMsg'/>
-        }
-    
+
+
     return (
         <>
             <NavBarPadrao />
@@ -33,7 +64,7 @@ function Contato() {
             <Container maxWidth="lg">
 
                 <Box paddingX={30}>
-                    <form>
+                    <form onSubmit={cadastrar}>
                         <Typography
                             variant="h3"
                             gutterBottom
@@ -45,6 +76,7 @@ function Contato() {
                         </Typography>
 
                         <TextField
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelContato(e)}
                             id="nome"
                             label="Nome"
                             variant="outlined"
@@ -56,10 +88,11 @@ function Contato() {
                         />
 
                         <TextField
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelContato(e)}
                             id="usuario"
                             label="E-mail"
                             variant="outlined"
-                            name="usuario"
+                            name="email"
                             margin="normal"
                             required
                             fullWidth
@@ -67,6 +100,7 @@ function Contato() {
                         />
 
                         <TextField
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelContato(e)}
                             id="assunto"
                             label="Assunto"
                             variant="outlined"
@@ -74,13 +108,22 @@ function Contato() {
                             margin="normal"
                             required
                             fullWidth
-                            
-
                         />
 
-                        <textarea id="msg" name="msg" rows={4} cols={50} className='inputMsg' placeholder='Mensagem *' />
+                        <TextField
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelContato(e)}
+                            id="assunto"
+                            label="Mensagem"
+                            variant="outlined"
+                            multiline
+                            rows={5}
+                            name="mensagem"
+                            margin="normal"
+                            required
+                            fullWidth
+                        />
                         <Box margin={5} marginTop={2} textAlign="center">
-                            <Button onClick={envio}
+                            <Button
                                 type="submit"
                                 variant="contained"
                                 className="btnEnviar"
@@ -92,12 +135,12 @@ function Contato() {
 
                     </form>
                 </Box>
-
-
-
             </Container>
         </>
     )
-}
+    
 
-export default Contato
+}
+  
+
+export default ContateNos;

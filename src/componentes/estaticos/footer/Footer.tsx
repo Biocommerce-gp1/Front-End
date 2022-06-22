@@ -7,6 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -18,10 +19,10 @@ function Footer() {
                 <div className="footer-col">
                     <h4>Acesso Rápido</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Cadastro</a></li>
-                            <li><a href="#">Produtos</a></li>
+                            <li><Link to='/home'>Home</Link></li>
+                            <li><Link to='/login'>Login</Link></li>
+                            <li><Link to='/cadastro'>Cadastro</Link></li>
+                            <li><Link to='/produto'>Produtos</Link></li>
 
                         </ul>
                     
@@ -40,10 +41,10 @@ function Footer() {
                 <div className="footer-col">
                     <h4>Contato</h4>
                         <div className="social-links">
-                            <a id='insta' href="#"> <InstagramIcon className='redes-sociais' /> </a>
-                            <a id='face' href="#"> <FacebookIcon className='redes-sociais'/> </a>
-                            <a id='wpp' href="#"> <WhatsAppIcon className='redes-sociais'/> </a>
-                            <a id='in' href="#"> <LinkedInIcon className='redes-sociais'/>  </a>
+                            <a id='insta' href="https://www.instagram.com/" target='_blank'> <InstagramIcon className='redes-sociais' /> </a>
+                            <a id='face' href="https://www.facebook.com/" target='_blank'> <FacebookIcon className='redes-sociais'/> </a>
+                            <a id='wpp' href="https://web.whatsapp.com/" target='_blank'> <WhatsAppIcon className='redes-sociais'/> </a>
+                            <a id='in' href="https://www.linkedin.com/"> <LinkedInIcon className='redes-sociais'/>  </a>
                         </div>
                     
                 </div>

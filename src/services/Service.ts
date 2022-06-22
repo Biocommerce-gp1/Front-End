@@ -4,8 +4,17 @@ export const api= axios.create({
     baseURL:'https://biocommerce.herokuapp.com/'
 })
 
+export const apiMercadoPago = axios.create({
+    baseURL:'https://api-m.sandbox.paypal.com'
+})
+
 //cadastro usuário:
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
+    const resposta = await api.post(url,dados)
+    setDado(resposta.data)
+}
+
+export const postaMensagem = async(url: any,dados: any,setDado: any) => { 
     const resposta = await api.post(url,dados)
     setDado(resposta.data)
 }
@@ -37,7 +46,3 @@ export const put = async(url: any, dados: any, setDados: any, header: any) => {
 export const deleteId = async(url: any, header: any) => {
     await api.delete(url, header)
 }
-
-
-
-
