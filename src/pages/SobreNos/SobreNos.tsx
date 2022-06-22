@@ -141,7 +141,7 @@ function SobreNos() {
           </div>
 
           <div className="cardDosDevs">
-            <div className='imgDev5'><p style={{ fontWeight: 'bold' }}>João Pedro</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quos libero iusto. Tempore ducimus sint cupiditate! Eaque, esse molestiae, quod quos ipsam explicabo officiis remque a!</p></div>
+            <div className='imgDev5'><p style={{ fontWeight: 'bold' }}>João Pedro - Full Stack Developer Jr.</p><p>Apaixonado pelo mundo da computação desde a adolescência, acredita na excelência profissional através da educação e desenvolvimento contínuo.</p></div>
             <div className="corpoContatoDev">
 
              <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-meira/" target="_blank"> <div className='linkedinIcon'></div></a>
