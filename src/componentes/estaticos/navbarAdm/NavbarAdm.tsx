@@ -79,7 +79,7 @@ function NavbarAdm() {
 
 
             <Link to={`/home`} className="logoutAdm" onClick={goLogout}>
-              <Box marginLeft={70} className="cursor">
+              <Box marginLeft={85} className="cursor">
                 <Typography variant="h6" color="inherit">
                   Sair
                 </Typography>
